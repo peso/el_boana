@@ -1,0 +1,29 @@
+/*
+ * There are 18 different possible move types from a given base square:
+ *
+ *   - LINE/PUSH moves are possible in each of 6 directions:
+ *
+ *				      1     2
+ *				      |   /
+ *				      | /
+ *				6 ----+---- 3
+ *				    / |
+ *		      		  /   |
+ *	     		 	5     4
+ *
+ *   - BROADSIDE/ROLL moves are possible in two ways for each of the 6
+ *	possible initial directions:
+ *
+ *			      *     8	      9     *
+ *			      *   /	      |   *
+ *	    18		      * /	      | *	           11
+ *	    |		7 ----*               *---- 10	          /
+ *	    |						        /
+ *    *******                                                 *******
+ *	  /						      |
+ *	/	       16 ----*		      *---- 13	      |
+ *    17		    * |		    / *		      12
+ *			  *   |		  /   *
+ *			*     15	14    *
+ *
+ */

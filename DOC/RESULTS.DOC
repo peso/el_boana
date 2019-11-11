@@ -1,0 +1,1585 @@
+
+                          University of Waterloo
+                        Arbitrary Game Competition
+                                  with
+                                Abalone
+
+                             March 28, 1993
+
+
+
+Well, the competition is over, and I must say that it was a gratifying
+start to a series of competitions. The server worked wonderfully for
+providing a records keeper of the contest and making move swapping
+easier, even though only two programs supported the server directly.
+
+Five programs were entered, and the results of a double round-robin
+tournament are shown below. We were quite amazed that all games were
+won by pushing off size marbles (no program ran out of time, or played
+so defensively that they ran out of moves). We were also amazed that
+each program got to play eight games and the competition was completed
+in 7 hours.
+
+A big thanks to Mortice-Kern Systems for supplying first through third
+place prizes!!!!
+
+
+
+PROGRAMS
+--------
+
+AL-Simple       Ed Dengler and Mike Van Lingen
+                (with extra help from Terry Van Belle and Shannon Mann)
+
+EBBOLONE        Dave Ebbo
+
+Sumo            Brent Ross
+
+El Boana        Colin Springer
+
+Frog Prince     Jesse Welton
+
+Abalone         Peter Tax
+                (Peter, if you see this, I am sorry to announce that all
+                 the Macintoshes we had available did not run System 7.
+                 We were unable to run your program. I tried sending you
+                 mail (as I received about 4 copies of your program), but
+                 you never seemed to have received it.)
+
+
+
+RESULTS
+-------
+
+             AL-Simple   EBBOLONE    Sumo        El Boana    Frog Prince
+             ----------- ----------- ----------- ----------- -----------
+AL-Simple    xxx-xx(xxx) B08-11(120) W08-11(073) W08-11(135) B08-13(058)
+             xxx-xx(xxx) W08-12(127) B08-14(310) B08-11(078) W08-13(131)
+
+EBBOLONE     W11-08(120) xxx-xx(xxx) B13-08(111) W08-11(099) W14-08(222)
+             B12-08(127) xxx-xx(xxx) W14-08(104) B08-10(114) B08-12(118)
+
+Sumo         B12-08(073) W08-13(111) xxx-xx(xxx) B08-14(070) B08-11(154)
+             W14-08(310) B08-14(104) xxx-xx(xxx) W08-12(083) W10-08(206)
+
+El Boana     B11-08(135) B11-08(099) W14-08(070) xxx-xx(xxx) B14-08(112)
+             W11-08(078) W10-08(114) B12-08(083) xxx-xx(xxx) W13-08(068)
+
+Frog Prince  W13-08(058) B08-14(222) W11-08(154) W08-14(056) xxx-xx(xxx)
+             B13-08(131) W12-08(118) B08-10(206) B08-13(068) xxx-xx(xxx)
+
+Results are read in rows. The score is:
+
+            <colour><score for row>-<score for column>(<# of moves>)
+
+
+
+STANDINGS
+---------
+
+So the final standings are:
+    First:    (8 wins, 0 losses)    El Boana
+    Second:   (5 wins, 3 losses)    EBBOLONE
+    Third:    (4 wins, 4 losses)    Frog Prince
+    Fourth:   (3 wins, 5 losses)    Sumo
+    Fifth:    (0 wins, 8 losses)    AL-Simple
+
+(Jesse, please send me your snail-mail address so I can ship your prize
+ to you).
+
+
+
+PROCEEDINGS
+-----------
+
+I am still putting together the proceedings of the competition. When it is
+ready, I will send it out.
+
+
+
+
+TRANSCRIPTS
+-----------
+
+Below are the transcripts of the games:
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "AL-Simple"]
+[White "EBBOLONE"]
+[Result "8(L)-11(W)"]
+
+1. g5g4-f5 a5c5-b5 
+2. h2f4-g3 a4c4-b4 
+3. i5h5-h5 b4d4-c4 
+4. i1h1-h2 b6b5-b5 
+5. g2-f3 a3c3-b3 
+6. i2h3-h3 b1-c2 
+7. h3f5-g4 b3d5-c4 
+8. h6h4-h5 a2-b3 
+9. i4h5-h5 d4e4-e4 
+10. h3f5-g4 a1c3-b2 
+11. e6e5-e5 f3e3-e3 
+12. f6f4-f5 b3d5-c4 
+13. i3g5-h4 b5-c6 
+14. g3e5-f4 c6e6-d6 
+15. g4e4-f4 b1-c1 
+16. h2-g3 b5b4-b4 
+17. h4-g4 b2d2-c2 
+18. e4e5-e5 c4d4-d4 
+19. f6d5-e6 e7-f6 
+20. h5-h4 e2e4-e3 
+21. g6-h5 e3e5-e4 
+22. d3-e3 d2-d3 
+23. e7-d7 d6f5-e6 
+24. i2-h2 d4f5-e5 
+25. h5-i4 f6g5-g5 
+26. h2h3-h3 e6g4-f5 
+27. i3h4-h4 g4h3-h3 
+28. e3g3-f3 i3i2-i2 
+29. i4h4-h4 i2-h2 
+30. h4h3-h3 c2e4-d3 
+31. h4h2-h3 c3-d4 
+32. g3h2-h2 f6f4-f5 
+33. h1h3-h2 c1-d2 
+34. i1h2-h2 d2d4-d3 
+35. d7d6-e7 d3f4-e4 
+36. e8e6-e7 e4g4-f4 
+37. i4-i3 f5g4-g4 
+38. i2-i1 h3g4-g4 
+39. e7e5-e6 h4f4-g4 
+40. d3-c3 f4f3-f3 
+41. f1-e1 e4e3-e3 
+42. i1g3-h2 e3e2-e2 
+43. g3e5-f4 f2f3-e3 
+44. h2g2-g3 e2e4-e3 
+45. f3f4-f4 e3e5-e4 
+46. c3c4-c4 e4e6-e5 
+47. e8-f8 h5-h4 
+48. i5-h5 b3-c3 
+49. i3-h3 h4g4-g4 
+50. g3h3-h3 c6-d6 
+51. h3-h4 g4f4-f4 
+52. i3g5-h4 e6e7-e7 
+53. h4f6-g5 d7e8-e8 
+54. f6f5-f5 f8e8-e8 
+55. c4d5-d5 c7d7-d7 
+56. h5g5-h4 e7e8-e8 
+57. g4e6-f5 e9e8-e8 
+58. c5d6-d6 b5b4-c5 
+59. f6e7-e7 e8f7-f7 
+60. e7d7-d7 c5c6-c6
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "EBBOLONE"]
+[White "AL-Simple"]
+[Result "12(W)-8(L)"]
+
+1. i1g3-h2 c5c4-d5 
+2. i2g4-h3 b2d4-c3 
+3. h2f4-g3 a2b3-b3 
+4. g5e5-f5 a1-a2 
+5. i3h4-h4 b6-c6 
+6. h3f5-g4 c6-d6 
+7. h6h4-h5 d6d5-d5 
+8. d3-e4 b4d4-c4 
+9. e6e5-e5 e3-d3 
+10. h1-g2 b1b3-b2 
+11. i5i4-i4 b5-c6 
+12. h3f5-g4 c6-d6 
+13. i3g5-h4 a5-b5 
+14. i4h5-h5 a2b2-b2 
+15. h4f6-g5 d6-c6 
+16. h5g6-g6 a4a3-a3 
+17. f7e7-e7 a2a3-a3 
+18. g4e4-f4 b1-a1 
+19. g2g3-g3 b4d4-c4 
+20. e6e5-e5 a4-b4 
+21. e4e5-e5 e3-e4 
+22. e7e5-e6 e3-e2 
+23. d3-e3 e2-d2 
+24. e3-d3 d2b2-c2 
+25. e4e6-e5 a1a3-a2 
+26. g2f3-f3 b4d4-c4 
+27. e6e5-e5 a4-b4 
+28. e7-e6 e3-e2 
+29. e4e6-e5 a2a3-a3 
+30. g2f3-f3 b4d4-c4 
+31. e7e5-e6 a3-b4 
+32. g3f3-f3 b5d5-c5 
+33. g3e3-f3 c3e5-d4 
+34. e3d2-d2 c6c4-c5 
+35. c1d2-d2 c5e5-d5 
+36. e4e3-e3 b4d4-c4 
+37. e3e2-e2 c2c4-c3 
+38. d2e2-e3 b2b3-b3 
+39. f2d3-e3 c5c4-c4 
+40. e1-e2 e4e5-e5 
+41. c2d3-d3 c4e6-d5 
+42. h6h5-h5 b3b4-c4 
+43. g2e4-f3 c3-b3 
+44. e7d6-d7 a3c5-b4 
+45. e2e4-e3 a4-b5 
+46. f3d4-e4 a4-a3 
+47. d7c6-c6 b3b4-b4 
+48. e4c4-d4 f5d6-e6 
+49. d4b4-c4 e6c6-d6 
+50. a4c4-b4 e7f6-e6 
+51. b4d4-c4 a3-b4 
+52. e3e5-e4 e7-d7 
+53. d4d3-c3 d7d5-d6 
+54. c2c4-c3 c6-d7 
+55. g6-f6 f4f5-f5 
+56. f7-e7 f6f5-f5 
+57. h4g5-g5 c7-c6 
+58. c4c5-c5 c7b6-b6 
+59. g5e7-f6 d4d6-d5 
+60. d8-e8 c7-d8 
+61. f6e7-e7 c7d8-d8 
+62. e6e8-e7 d6-e6 
+63. d7c6-c6 a4b4-a3 
+64. c5b5-b5 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "Sumo"]
+[White "AL-Simple"]
+[Result "12(W)-8(L)"]
+
+1. i1g3-h2 a5c5-b5 
+2. i5g5-h5 c5d5-d5 
+3. h5f5-g5 c3-d3 
+4. g5e5-f5 b4c4-c4 
+5. i3h4-h4 b6-a5 
+6. i2h2-h2 b5-c5 
+7. g3e5-f4 b5-b4 
+8. h2g2-g3 a1b1-b1 
+9. h3f5-g4 b2-a1 
+10. g5e5-f5 a1c1-b1 
+11. g4e4-f4 b1-a1 
+12. i4h4-h4 a3c5-b4 
+13. d4d3-d3 b2c2-c2 
+14. e2-e3 d2c2-c2 
+15. g3e3-f3 b2c2-c2 
+16. h4g4-h3 d2c2-c2 
+17. e2-d2 d1-e1 
+18. f3d2-e3 c4c2-c3 
+19. f4d5-e5 c1c3-c2 
+20. e5c5-d5 b3b4-b4 
+21. e3e4-e4 b4b5-b5 
+22. e5c5-d5 a5a4-a4 
+23. b5d5-c5 a2a4-b3 
+24. h3g3-g4 b4c4-c4 
+25. g4e6-f5 c6b5-b5 
+26. c5-c6 b6-a5 
+27. d3d2-e3 e1-d1 
+28. d6d5-d5 b3b2-b2 
+29. c6-c5 c2c4-c3 
+30. c6-d6 c5c3-c4 
+31. d6d4-d5 b1b2-b2 
+32. d5d3-d4 b2-a2 
+33. d4d2-d3 a5b5-b5 
+34. d1d3-d2 c5-c6 
+35. f5d4-e5 b2b3-b3 
+36. e4d3-d3 a2c4-b3 
+37. d3c2-c2 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "AL-Simple"]
+[White "Sumo"]
+[Result "8(L)-14(W)"]
+
+1. g5g4-f5 a5c5-b5 
+2. h2f4-g3 a1c3-b2 
+3. h6h4-g6 a3c5-b4 
+4. i5i4-h5 a4b5-b5 
+5. i1h1-h2 b1-c2 
+6. g6-f6 a2c2-b2 
+7. f6-e6 b3d5-c4 
+8. f6f4-f5 c5d6-d6 
+9. h4f4-g4 c2c4-c3 
+10. h5-h4 e7-e8 
+11. h3f3-g3 d2-c2 
+12. e3e5-e4 c4d5-d5 
+13. g2e4-f3 e8e6-e7 
+14. i2-h3 c4e6-d5 
+15. e3-d3 e7e5-e6 
+16. e3d3-d3 b2b3-a2 
+17. d3c3-c3 b6b4-b5 
+18. h4f4-g4 e6e5-e5 
+19. i3-h4 f6-e6 
+20. g6-f6 a2b3-b3 
+21. e3-f2 a3-a2 
+22. f2-g2 a2-a3 
+23. b2-a1 a3b3-a2 
+24. f6h4-g5 b4-a3 
+25. a1-b1 e4c2-d3 
+26. h4f4-g4 e6e5-e5 
+27. i3-h4 a2a3-b3 
+28. d4c3-c3 a1-a2 
+29. b2c3-c3 b3d5-c4 
+30. e3-f2 b1-c1 
+31. f2-e3 a2-b3 
+32. f3e3-e3 e6e4-e5 
+33. e2d2-d2 e4d3-d3 
+34. b1-a1 c2-b1 
+35. h4f4-g4 c1b1-b1 
+36. g4e4-f4 c2b2-b2 
+37. d2d4-d3 b3c4-c4 
+38. h3g3-g3 c4d5-d5 
+39. c3d3-d3 f2-f1 
+40. d3e3-e3 f1-e1 
+41. f2-e2 e1-d1 
+42. e2e4-e3 c6e6-d6 
+43. e3e5-e4 b4-c4 
+44. g5f6-g6 c4d5-d5 
+45. d4e5-e5 e8e6-e7 
+46. e3g3-f3 b5-c6 
+47. g2e4-f3 a1b2-b2 
+48. f7g6-g6 b1-c2 
+49. h5-h6 c2c3-c3 
+50. g6h6-h5 d7d5-d6 
+51. d3-e3 a2b2-b2 
+52. i5h5-i4 c2-d3 
+53. i4-i3 b2-b3 
+54. h2-g2 c5e5-d5 
+55. g2e4-f3 e7e5-e6 
+56. e3f3-f2 d1-d2 
+57. f6f5-f5 b4-c5 
+58. h4f4-g4 e6e5-e5 
+59. e3f2-f2 c2e4-d3 
+60. g1-f1 b3c3-b2 
+61. e2-e1 f3f4-f4 
+62. h3g4-g4 c6e6-d6 
+63. g2g4-g3 g6-f7 
+64. f6g5-g6 c2d2-d2 
+65. f1f2-g1 e6e4-e5 
+66. i3-i2 e4e2-e3 
+67. h4g4-g4 f5e5-e5 
+68. i2g4-h3 e1e2-f1 
+69. g1-h1 d2e3-e3 
+70. h1h3-h2 d6-c6 
+71. h4f4-g4 d3c2-d2 
+72. h5g6-g5 f7-e8 
+73. h3f5-g4 d2f3-e3 
+74. h3-h4 b2-b3 
+75. c3-c2 c6c4-c5 
+76. h4f6-g5 c3e5-d4 
+77. h5-g6 e8-d8 
+78. h2g2-g2 c1-d1 
+79. f2g2-g1 f1-f2 
+80. g1h1-h1 g3-h2 
+81. g5g4-g4 d1-d2 
+82. i1-i2 e3f3-f3 
+83. c2-d3 g3-g2 
+84. i2h3-i3 f3g2-g2 
+85. d3e4-e3 h1g2-g2 
+86. g4e4-f4 e2f2-f1 
+87. i3-h3 h2-g3 
+88. h3h4-g4 f1-f2 
+89. e7g5-f6 d8-d7 
+90. h4f6-g5 d7-d6 
+91. e7g5-f6 d4f5-e5 
+92. d3-d4 d2-c1 
+93. e3-d3 g1f2-f2 
+94. h5g6-g6 c1-d1 
+95. f7-e8 d1-e2 
+96. e8-f7 g2-h2 
+97. f7-e8 f2-g2 
+98. e8-f7 e2-f2 
+99. f7-e8 e3-e2 
+100. e8-f7 f3-e3 
+101. d4e4-e4 g2f2-g1 
+102. f3e4-e4 f1-f2 
+103. g4-h3 h2-g2 
+104. h3-g4 f2-f3 
+105. f7-e8 f3-f2 
+106. e8-e7 f2-f3 
+107. h4-h5 c5d6-d6 
+108. h5-h4 g1-f2 
+109. f7-e8 e7-d7 
+110. e8-e7 d7d5-d6 
+111. d2d3-c2 d6d4-d5 
+112. c2c3-c3 d3d5-d4 
+113. c3c4-c4 c6-b5 
+114. c4c5-c5 d4-c4 
+115. c6c5-c5 b5-b4 
+116. c4-d4 c3-c4 
+117. c5-c6 d6d5-d5 
+118. d3-c2 d4-d3 
+119. c2-c3 d3-d4 
+120. c6-d7 b4-c5 
+121. c3-c2 f2e3-e3 
+122. c2-b2 d3-c3 
+123. b2-b1 d4c3-c3 
+124. b1-c1 e2-d2 
+125. c1-d1 g2f3-f3 
+126. h4f4-g4 d3d2-d2 
+127. d7f6-e7 h4-h3 
+128. g4e4-f4 b2-a2 
+129. d3d4-d4 d1-e2 
+130. g6g5-g5 d6c5-c5 
+131. g5g4-g4 g2-f2 
+132. d4e4-e4 g2-h2 
+133. d5-d4 a2c4-b3 
+134. g4e4-f4 b3d5-c4 
+135. d3d4-d4 c4c5-c5 
+136. d4d5-d5 d7c6-c6 
+137. d6d5-d5 h3-g4 
+138. f6e7-f7 b4-b3 
+139. f3f4-f4 h2-h3 
+140. g6-g5 f6e6-e6 
+141. c4e4-d4 c5e5-d5 
+142. f3g3-g3 i3-h4 
+143. g5-f6 d2e3-e3 
+144. e8f7-f7 h4f4-g4 
+145. d3d4-d4 e2-d2 
+146. g6-g5 b3c3-c3 
+147. g3h3-h3 g4-g3 
+148. i3h3-h4 c6e6-d6 
+149. h2h4-h3 g3e5-f4 
+150. g4g5-g5 f3e4-e4 
+151. c5c4-b4 b5-c5 
+152. b3-a3 e3c3-d3 
+153. a3-a4 b3-c4 
+154. b4-a3 e4c4-d4 
+155. a4a3-a3 c5b4-b4 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "El Boana"]
+[White "AL-Simple"]
+[Result "11(W)-8(L)"]
+
+1. i1g3-h2 c5c4-d5 
+2. i2g4-h3 c3d4-d4 
+3. h2f4-g3 c5-c4 
+4. i3g5-h4 b6b5-c6 
+5. i4h5-h5 c6-d6 
+6. h6f6-g6 a5-b5 
+7. g5e5-f5 d6d5-d5 
+8. i5h5-h5 a3c5-b4 
+9. d3-e4 c3b3-b3 
+10. h1-g2 b1b2-c2 
+11. g5e5-f5 d6d5-d5 
+12. h5-g5 a3c5-b4 
+13. h3g3-g3 a1a2-a2 
+14. g4e6-f5 a3a2-a2 
+15. h4f6-g5 a1a2-a2 
+16. e4f4-f4 b2-a1 
+17. g5e5-f5 a4c4-b4 
+18. e7f6-f6 a1a3-a2 
+19. e6e4-e5 b5-a5 
+20. g3e5-f4 a2c4-b3 
+21. g6g4-g5 a5a3-a4 
+22. g4g5-g5 a4a2-a3 
+23. d6f5-e6 c6-d6 
+24. e3g3-f3 a1a3-a2 
+25. g4e6-f5 a3a2-a2 
+26. h3f3-g3 a2-a3 
+27. g6g5-g5 a4a3-a3 
+28. d6-e7 b3d5-c4 
+29. e7g5-f6 e6c4-d5 
+30. e3e5-e4 c6-d6 
+31. g4e6-f5 a2a3-a3 
+32. h4-g4 a3-a2 
+33. e4e6-e5 a2-a3 
+34. d3-e4 c2-d3 
+35. e7-e8 a1-a2 
+36. g4e4-f4 a3a4-a4 
+37. e8-e7 a2-a3 
+38. d6f5-e6 a5a3-a4 
+39. g4-h3 a4a2-a3 
+40. h3-g4 c6b5-b5 
+41. e7g5-f6 a4-a5 
+42. h4f6-g5 a1a3-a2 
+43. d3-e3 a5-b6 
+44. e7-d6 b6-c6 
+45. e3-d2 a3c3-b3 
+46. d2-e3 a2c2-b2 
+47. g4e4-f4 b1-a1 
+48. e6f5-f5 d2b2-c2 
+49. g6f6-f6 b4-a3 
+50. g2e4-f3 b3d5-c4 
+51. e3e5-e4 e7-e8 
+52. d6-e7 e8-d7 
+53. d3d4-d4 a3-b3 
+54. g4e6-f5 b6-a5 
+55. g6-f7 a1a2-a2 
+56. f5d4-e5 a1-b1 
+57. d6d4-d5 c2-c1 
+58. f7f6-f6 b1c1-c1 
+59. g3f3-f3 c5c4-c4 
+60. f5d4-e5 c1d1-d1 
+61. e3c3-d3 a3b4-b4 
+62. e5c3-d4 c6c4-c5 
+63. c2b2-b2 d7-c6 
+64. b3b2-b2 c3-b3 
+65. a2b2-b2 b5b3-b4 
+66. c1b1-b1 b4b2-b3 
+67. e4c2-d3 b3b2-b2 
+68. d3c2-c2 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "AL-Simple"]
+[White "El Boana"]
+[Result "8(L)-11(W)"]
+
+1. i1g3-h2 a1c3-b2 
+2. h2f4-g3 b2d4-c3 
+3. g3f4-f4 b5d5-c5 
+4. g5-f6 a5b6-b5 
+5. h1-i1 a3c5-b4 
+6. h6h5-g6 b3d5-c4 
+7. i5-h5 c4e6-d5 
+8. h6-i5 a4b4-b4 
+9. i3g3-h3 b1-b2 
+10. i5i4-i4 b2a2-b3 
+11. f3f5-f4 a3c3-b3 
+12. i2i4-i3 f7-e7 
+13. i4g6-h5 c5e5-d5 
+14. i5-i4 c4d4-d4 
+15. i1-i2 f4d3-e4 
+16. g3-f4 b5b4-c5 
+17. i4i2-i3 d3-e3 
+18. h3h5-h4 c6e6-d6 
+19. g5g4-g4 b3c3-c3 
+20. i1i3-i2 d4f5-e5 
+21. f4h2-f3 g5e5-f5 
+22. i3h4-h4 c2e4-d3 
+23. f3h1-g3 e3-f3 
+24. g5g3-g4 f3f5-f4 
+25. f7-g7 d5f6-e6 
+26. h6-i5 f6e7-f7 
+27. i4-i3 d3f4-e4 
+28. i1g3-h2 e8g6-f7 
+29. h3h4-h4 f7g6-f6 
+30. h4h5-h5 f6f5-f5 
+31. h5-g6 c4e6-d5 
+32. h6f8-g7 d5f4-e5 
+33. g6-h6 e5g3-f4 
+34. i1-h1 f6f4-f5 
+35. g2f2-g1 g5g3-g4 
+36. h1f1-g1 g2h2-h2 
+37. i5i3-i4 g4g3-g3 
+38. i4i2-i3 f4h2-g3 
+39. i3i2-i2 g3h2-h2 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "AL-Simple"]
+[White "Frog Prince"]
+[Result "8(L)-13(W)"]
+
+1. g5g4-f5 a2c4-b3 
+2. f4f5-e5 a1c3-b2 
+3. g3-f4 b5d5-c5 
+4. e6-f5 a3c3-b3 
+5. h6h4-g6 b6-b5 
+6. h2h3-h3 b1-c2 
+7. g6-f6 b3d5-c4 
+8. h1-g2 c2d3-d3 
+9. h4f6-g5 b2-c2 
+10. h3g3-g3 c2e4-d3 
+11. i1i2-h2 d5f4-e5 
+12. h2-h1 c3e5-d4 
+13. g5e7-g6 a5c5-b5 
+14. g6e8-f6 a4b5-b5 
+15. h5-g6 c6-d6 
+16. i4h4-h5 b4d6-c5 
+17. d7-e8 d6f5-e6 
+18. i3-h4 c4e6-d5 
+19. g2-f2 d5f6-e6 
+20. h6-g7 e6g4-f5 
+21. f3f2-g2 f5h3-g4 
+22. i1-h2 f4g3-g3 
+23. i1g1-h1 h3h2-h2 
+24. i5g5-h5 h1h2-h2 
+25. h5f5-g5 i2g4-h3 
+26. e8f7-f7 f5f6-f6 
+27. f8g7-g7 e7f7-f7 
+28. g5g6-g6 h5-g5 
+29. g1g2-f2 g3g5-g4 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "Frog Prince"]
+[White "AL-Simple"]
+[Result "13(W)-8(L)"]
+
+1. i4g4-h4 c5c4-d5 
+2. i5g5-h5 b2d4-c3 
+3. h2f4-g3 a1b1-b2 
+4. h1-h2 c2c3-c3 
+5. i3g5-h4 b3d5-c4 
+6. h3f5-g4 b6b4-b5 
+7. h6h4-h5 b3d5-c4 
+8. h3f5-g4 a2-b3 
+9. h4f4-g4 b4d4-c4 
+10. g4f4-f4 a3-b4 
+11. i2h2-h2 a5-b6 
+12. g6g5-g5 b3d5-c4 
+13. e4e5-e5 d3c3-c3 
+14. g2f3-f3 b4d4-c4 
+15. i1-h1 e7c5-d6 
+16. h5-h4 e4-d3 
+17. h1f3-g2 a4c6-b5 
+18. h4f6-g5 d3b3-c3 
+19. g2-f2 b4d4-c4 
+20. h2-h3 a3c3-b3 
+21. e7e5-e6 b6b5-b5 
+22. h3f3-g3 b3d3-c3 
+23. e5e4-e4 b2d4-c3 
+24. g6e6-f6 c3e5-d4 
+25. g1e3-f2 e2d2-d1 
+26. f6d5-e6 a2-a3 
+27. f2f4-f3 f6-e7 
+28. g4e6-f5 c6d7-c7 
+29. e6c4-d5 b6b4-b5 
+30. e3e4-e4 b5b3-b4 
+31. b1-c2 d8-e8 
+32. c2d3-d2 c1-c2 
+33. d6d5-d5 c5-c6 
+34. f5d4-e5 a1-b1 
+35. g2g3-g3 e8e6-f7 
+36. e5c3-d4 f7f5-f6 
+37. c4c3-c3 c1d1-d1 
+38. d2b2-c2 f6-e6 
+39. d5d4-d4 b3b4-c4 
+40. e4c2-d3 d2-e2 
+41. a2c2-b2 d1e2-e2 
+42. b2d2-c2 f4-e5 
+43. d2e2-e2 e1-d1 
+44. d3e3-e3 g1-h1 
+45. f2e2-e2 h1-h2 
+46. b1-b2 c6c4-c5 
+47. c1c2-d2 c5c4-b4 
+48. d1e2-e2 b4b3-b3 
+49. b1-c2 b2-a2 
+50. f1f3-f2 h2-i2 
+51. f3f4-f4 f6e6-e6 
+52. c2d3-d3 c7-c6 
+53. e2g2-f2 i2-i3 
+54. h2f4-g3 c3b3-c4 
+55. g3e5-f4 a1a2-b2 
+56. f2g2-f3 a3c5-b4 
+57. f3d4-e4 c6c5-c5 
+58. d2e3-e3 c5c4-c4 
+59. f5d4-e5 b2b3-a2 
+60. c2c3-c3 a4b5-b5 
+61. e3c3-d3 b5b4-b4 
+62. c3b2-b2 a3a2-a2 
+63. b2-c3 a1a2-a2 
+64. d4c4-c4 a4-b5 
+65. f4d5-e5 b5c6-c6 
+66. c5b4-b4 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "EBBOLONE"]
+[White "Sumo"]
+[Result "13(W)-8(L)"]
+
+1. i1g3-h2 a5c5-b5 
+2. h2f4-g3 a1c3-12 
+3. i2g4-h3 a3c3-b3 
+4. i3g5-h4 a2b2-b2 
+5. i4h5-h5 b1d3-c2 
+6. h6f6-g6 a4b5-b5 
+7. h1-g2 e4-e3 
+8. h4f6-g5 e3-e4 
+9. e7e5-e6 b4d4-c4 
+10. i5h5-i4 b6b5-b5 
+11. h3f3-g3 c6-d7 
+12. i4-h5 b3d3-c3 
+13. h4f6-g5 c2e4-d3 
+14. e7e5-e6 e2d2-d2 
+15. h5h4-h4 e3c3-d3 
+16. f2-e3 d2-d1 
+17. g4e6-f5 f4-g4 
+18. f6f5-f5 d7-c6 
+19. g6-f6 d3d5-d4 
+20. h4h3-h3 d6d4-d5 
+21. e4f4-f4 d3d5-d4 
+22. f6g5-g5 d5d6-d6 
+23. g4e6-f5 b4c5-c5 
+24. g3h3-h3 d6d7-d7 
+25. h2h3-g3 d8d7-d7 
+26. g3e5-f4 c5d6-d6 
+27. i3g5-h4 d6e7-e7 
+28. h4f6-g5 c7d7-d8 
+29. g2f3-f3 b3-b4 
+30. e7-d6 b6b4-b5 
+31. d6d5-d5 d8e8-d7 
+32. g7-g6 c3c2-c2 
+33. f3d4-e4 b4b2-b3 
+34. d5d4-d4 c2d2-d2 
+35. g6e6-f6 d2e2-e2 
+36. e4e3-e3 e1f1-f1 
+37. e2-d2 g1f1-f2 
+38. e3d2-d2 d1f2-e2 
+39. c1-c2 b1-a1 
+40. d2c2-c2 a2-a3 
+41. b2-c3 b3-b4 
+42. c2d3-d3 b4-c5 
+43. f4d5-e5 a5-b6 
+44. g4e6-f5 c6d7-d7 
+45. e4e6-e5 e9-f8 
+46. g5e7-f6 c7-d8 
+47. e5e7-e6 a1-b2 
+48. e7e8-e8 e2f2-e3 
+49. d6d7-d7 f8f7-g7 
+50. d3c3-c3 a3-b4 
+51. e8d7-e7 b4-a3 
+52. c3b3-b3 e3-e4 
+53. a3b3-b3 b2-b1 
+54. e9d8-e8 b5-a5 
+55. c3c5-c4 e4f3-e3 
+56. d6c6-c6 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "Sumo"]
+[White "EBBOLONE"]
+[Result "8(L)-14(W)"]
+
+1. i1g3-h2 a5c5-b5 
+2. i5g5-h5 a1c3-b2 
+3. h2f4-g3 a4b5-b5 
+4. g4f4-f4 b4d4-c4 
+5. i4h4-h4 b1b3-b2 
+6. i3g5-h4 a3c5-b4 
+7. h6-g6 b6d6-c6 
+8. g6-f7 a2b2-b2 
+9. h1-h2 b3c3-c3 
+10. f7-e7 b4d6-c5 
+11. h4f6-g5 c2e4-d3 
+12. g5e7-f6 d3f4-e4 
+13. d7f6-e7 c4e6-d5 
+14. g6-g7 e4g4-f4 
+15. g7e7-f7 g4h4-h4 
+16. i2h3-h3 c7c5-c6 
+17. d6f7-e7 b4c5-c5 
+18. f3-e4 c4d4-d4 
+19. g7e7-f7 c6c5-c5 
+20. h3f3-g3 d4d5-d5 
+21. e7d7-e8 b4c4-c4 
+22. h2-h3 b5-c6 
+23. e8-e7 c6-d7 
+24. d8-e8 d7-c6 
+25. e3-d2 c4e4-d4 
+26. e8-d7 f3d4-e4 
+27. d7-e8 b2-b3 
+28. g2-f3 c4e4-d4 
+29. g2-h1 c3b3-c4 
+30. f7-f8 d4-d3 
+31. g5e5-f5 h4-g5 
+32. e7-f7 d3f4-e4 
+33. h4h3-h3 b4d6-c5 
+34. f7-g6 g4g5-g5 
+35. g7f8-f8 g6-f7 
+36. e9-d8 f6f7-f7 
+37. e8-d7 f8-e8 
+38. h1h3-h2 f7e8-e8 
+39. h2-h1 f3f4-f4 
+40. h5h3-h4 i4-h5 
+41. h2h4-h3 h6-g6 
+42. h5-h6 g6-h5 
+43. d2-d3 h5f5-g5 
+44. d3-d2 g5e5-f5 
+45. c3-c2 c6c4-c5 
+46. b2c2-b1 d8e8-e8 
+47. d7-c7 e8-d7 
+48. c7-b6 c4e6-d5 
+49. g6-h5 d7f6-e7 
+50. h5h4-i4 c5-c4 
+51. i4-h4 e7g5-f6 
+52. h1-g2 g5h4-h4 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "El Boana"]
+[White "EBBOLONE"]
+[Result "11(W)-8(L)"]
+
+1. i1g3-h2 a5c5-b5 
+2. i2g4-h3 b5d5-c5 
+3. h5f5-g5 b6-b5 
+4. i5h6-h5 b4d4-c4 
+5. i3g5-h4 b1b3-b2 
+6. h3f5-g4 a3c3-b3 
+7. h4f4-g4 b4d4-c4 
+8. e6e5-e5 a4-b4 
+9. h1-g2 b3d5-c4 
+10. i4-h4 a2-b3 
+11. h2-h3 b5c5-c6 
+12. g3e5-f4 a1-b1 
+13. h5g6-g6 c2-d2 
+14. e4e5-e5 b4d4-c4 
+15. h4f4-g4 d6c5-c5 
+16. h3-g3 c6-b5 
+17. f6d5-e6 d2d4-d3 
+18. e4e6-e5 d3d5-d4 
+19. g4e6-f5 b1c2-c2 
+20. f7d6-e7 d3d5-d4 
+21. g6g5-g5 d4d6-d5 
+22. g4e6-f5 a3c3-b3 
+23. g5e5-f5 c6-c7 
+24. g2f3-f3 b6c7-c7 
+25. f5d4-e5 a1-b1 
+26. c5c3-c4 a2b2-b2 
+27. f4e5-e5 d7-c6 
+28. f3g3-f4 b3b5-b4 
+29. f4d5-e5 e3d3-d3 
+30. g4-f5 b6d8-c7 
+31. f5d4-e5 b1d3-c2 
+32. e5e7-e6 d8-d7 
+33. e8e6-e7 b2c2-c2 
+34. c3c5-c4 b5b4-b4 
+35. b2-c3 c2d2-d2 
+36. c5c6-c6 d2e2-e2 
+37. c7c6-c6 b4-a4 
+38. c6-b5 a5-b6 
+39. e7e5-e6 c1-d2 
+40. c3c5-c4 a4-a3 
+41. e6c6-d6 a3b3-b3 
+42. c5c4-c4 a1-b2 
+43. b6d6-c6 d2e3-e3 
+44. d6d4-d5 d7-d6 
+45. e6e4-e5 e2-f2 
+46. c3e3-d3 g1-h1 
+47. c4e4-d4 h1g2-h2 
+48. e5e3-e4 b2b3-c3 
+49. f3f2-f2 d6-e6 
+50. e3e2-e2 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "EBBOLONE"]
+[White "El Boana"]
+[Result "8(L)-10(W)"]
+
+1. i1g3-h2 a1c3-b2 
+2. i2g4-h3 a2c4-b3 
+3. h2f4-g3 a3c5-b4 
+4. i3g5-h4 a4b5-b5 
+5. h1-h2 b6d6-c6 
+6. i4h5-h5 b1-c2 
+7. h4f4-g4 b4d4-c4 
+8. h6h5-h5 b3c3-c3 
+9. i5-i4 a5-a4 
+10. i4-i3 a4-b4 
+11. h2-g2 b4-b3 
+12. g2-h2 b3d3-c3 
+13. h2-g2 e3-f2 
+14. i3-i4 f2-e3 
+15. h5h3-h4 e3c3-d3 
+16. i4-h5 c4-b4 
+17. h5g6-g6 b3-c4 
+18. f7-e7 b4d6-c5 
+19. f7-e8 e7c5-d6 
+20. h4f6-g5 c2e4-d3 
+21. h4-h5 c4e6-d5 
+22. h6g6-g7 d3f4-e4 
+23. h3f3-g3 g4e4-f4 
+24. h2g3-h3 d3f4-e4 
+25. i4h5-h5 g4e4-f4 
+26. h4-g4 b4-c4 
+27. g2-g3 b5-b4 
+28. g3-h2 c4e4-d4 
+29. g2-g3 d3f4-e4 
+30. e3-d3 f3-e3 
+31. h3g3-g3 c6c5-c5 
+32. g3f3-f3 g4e4-f4 
+33. g6g5-g5 d3f4-e4 
+34. i4h5-h5 d2-d3 
+35. c2-d2 g4-g3 
+36. d2f3-e3 d6e6-e6 
+37. g7e7-f7 d4d5-d5 
+38. e3g3-f3 b4d6-c5 
+39. g5h4-h4 d3f4-e4 
+40. g7g6-g6 e4g4-f4 
+41. f3-e4 b2c3-c3 
+42. i3g3-h3 h4f4-g4 
+43. h5i4-h4 e4g4-f4 
+44. i4-i5 h4f4-g4 
+45. i5-h5 e7f6-f6 
+46. d7-e7 e4g4-f4 
+47. d3-e4 f6h4-g5 
+48. f3h3-g3 f4h4-g4 
+49. f7h5-g6 g5h4-h4 
+50. g3h3-h3 f5g4-g4 
+51. h5g6-g5 c5d5-d5 
+52. i2h2-h2 g4h4-h4 
+53. g2-g3 i4h4-h4 
+54. h2f4-g3 c3d4-d4 
+55. f4g3-f3 c5e5-d5 
+56. g2e4-f3 f4-g3 
+57. f3-f4 g3h3-h3 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "Frog Prince"]
+[White "EBBOLONE"]
+[Result "8(L)-14(W)"]
+
+1. i5g5-h5 a5c5-b5 
+2. i4g4-h4 a1c3-b2 
+3. i3g5-h4 b5d5-c5 
+4. h1-g2 b6-b5 
+5. h4f4-g4 b4d4-c4 
+6. h6h5-h5 b3d5-c4 
+7. h4f4-g4 e6e5-e5 
+8. i2g2-h2 a2a3-b3 
+9. i1-h1 b1-c2 
+10. h1h3-h2 c4e4-d4 
+11. h3f5-g4 b3d3-c3 
+12. h1h2-h2 c3e3-d3 
+13. f6e6-e6 b2-c3 
+14. d5e6-e6 b5c5-c5 
+15. f6f4-f5 c4e4-d4 
+16. h4g5-g5 d4f3-e4 
+17. h1h3-h2 g2e4-f3 
+18. g1-g2 a4b4-b4 
+19. h5-g6 b4-b3 
+20. g6-h5 b3d5-c4 
+21. g6-f7 d4f3-e4 
+22. g4g3-g3 d3-d4 
+23. h1-i1 g1e3-f2 
+24. g2g3-g3 f1-e2 
+25. h3f5-g4 e3e5-e4 
+26. i1-i2 f2e2-e3 
+27. h2i2-h3 c4e6-d5 
+28. h3f5-g4 e3e5-e4 
+29. i3-h3 e4e6-e5 
+30. e9-d8 c5e7-d6 
+31. h5h3-h4 c3e5-d4 
+32. h4f4-g4 d6f5-e6 
+33. i2h2-h2 e5e7-e6 
+34. h5g5-g5 f7e8-e8 
+35. e9-f8 d8e8-e8 
+36. e4f4-f4 f6f7-f7 
+37. g7g6-h6 h4-i4 
+38. h6h5-h5 c2d3-d3 
+39. h5f5-g5 i4-h5 
+40. h3f5-g4 h5-g6 
+41. h4f4-g4 d2c2-c2 
+42. e4e6-e5 e9e8-d8 
+43. g5-f6 f8-e8 
+44. g4e6-f5 b6c6-b5 
+45. g2g3-g3 d8d7-c7 
+46. d6e7-e7 g7g6-g6 
+47. e7e5-e6 c7c5-c6 
+48. f7-e7 f3-e3 
+49. h2-g2 e8-f7 
+50. g2g4-g3 g7g6-h6 
+51. g4e4-f4 b1b2-b2 
+52. d3f4-e4 c2-d3 
+53. g4g5-g5 h6h5-i5 
+54. g6-h5 i5i4-i4 
+55. f6f4-f5 b3d5-c4 
+56. e7g5-f6 i3-h3 
+57. h4-g4 h3-h2 
+58. h5-h4 i4-i5 
+59. e4e5-e5 b2-b3 
+60. h4-h5 i5-i4 
+61. g4f4-f4 f7e7-e7 
+62. h5-g6 i4-h4 
+63. g5e5-f5 h2-h3 
+64. f3g3-g3 i3h4-h4 
+65. h3-g4 b2b3-b3 
+66. g4e6-f5 b6-c7 
+67. d4f5-e5 h5h4-h4 
+68. d6f5-e6 c7c6-d7 
+69. e6g4-f5 i2-h2 
+70. e4g4-f4 i4-i5 
+71. h4f6-g5 d7d5-d6 
+72. g6f6-f6 b3d5-c4 
+73. h3f5-g4 c3-b3 
+74. g5e5-f5 b4c4-c4 
+75. e7f6-f6 c4d4-d4 
+76. g6e6-f6 c4e4-d4 
+77. g4e6-f5 b6b5-b5 
+78. g2g3-g3 h2-g2 
+79. f6f4-f5 c7c5-c6 
+80. g5e5-f5 f2-e2 
+81. f4d5-e5 e2e4-e3 
+82. e7-f6 e3e5-e4 
+83. d6c5-c5 c6-d6 
+84. g4g3-g3 g1-f2 
+85. d4d5-d5 c3c4-c4 
+86. f6e7-e7 a3b3-b3 
+87. d7c6-c6 b2c3-c3 
+88. f5-f4 d3e4-e4 
+89. d6d5-d5 a4-a3 
+90. g3g4-g4 f2-e3 
+91. g4-f5 i5-h5 
+92. f5g5-g5 i5-h6 
+93. e7-d6 h6-g6 
+94. h5g5-g5 g6-f6 
+95. b5b4-b4 a3-a2 
+96. b4b3-b3 e3c3-d3 
+97. a3-a4 c5-b4 
+98. a4-b5 b3b4-b4 
+99. d6-c5 b4b5-b5 
+100. g5-g4 c7-d7 
+101. f3g2-g3 d3f4-e4 
+102. h2g3-g2 d7-e7 
+103. h4-g5 e7f6-f6 
+104. d4d5-d5 c4-d4 
+105. d6d5-d5 f6e6-e6 
+106. c6c4-c5 b1d3-c1 
+107. b2-b3 a2-b2 
+108. b3c3-c3 g4e4-f4 
+109. h4-g4 e3d3-d3 
+110. d4c4-c4 e4d3-d3 
+111. g4f5-f5 d3c2-c2 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "EBBOLONE"]
+[White "Frog Prince"]
+[Result "8(L)-12(W)"]
+
+1. i1g3-h2 a4c4-b4 
+2. i2g4-h3 a5c5-b5 
+3. h2f4-g3 a3c5-b4 
+4. i3g5-h4 a2b2-b2 
+5. i4h5-h5 b1c2-c2 
+6. h6f6-g6 b4d4-c4 
+7. h1-g2 b6b5-b5 
+8. g2-f3 a1-a2 
+9. i5-i4 a2c2-b2 
+10. h3f3-g3 c3d3-d3 
+11. g5e5-f5 b2d2-c2 
+12. h5h4-h4 e2e4-e3 
+13. e7f6-f6 c5e5-d5 
+14. i4-h5 d3f4-e4 
+15. i4g6-h5 e3e5-e4 
+16. h3f3-g3 c2c4-c3 
+17. f2e3-e3 g4e4-f4 
+18. h2g3-h3 d3f4-e4 
+19. g6g5-g5 d2-d3 
+20. h3f5-g4 b3d5-c4 
+21. e3f3-f3 c4e6-d5 
+22. g6-g7 d5f4-e5 
+23. g5g4-g4 b5c5-c5 
+24. h6h5-g6 c6c5-c5 
+25. f3g3-g3 g2-f3 
+26. g5h4-h4 d5f4-e5 
+27. h2h4-h3 e6f6-f6 
+28. i3h4-h4 c5d6-d5 
+29. h3f5-g4 c4c3-c3 
+30. c1-d2 c3d3-d3 
+31. g4e6-f5 e3e5-e4 
+32. f7d6-e7 e4e6-e5 
+33. c5d6-d6 c2d3-d3 
+34. h6h4-h5 d3f4-e4 
+35. i4-i3 f4g4-g4 
+36. i4i3-i3 c6-c5 
+37. i1-h2 c5e5-d5 
+38. d2-d3 g6f7-f7 
+39. d8-d7 g3g4-g4 
+40. i2i3-i3 e6f6-f6 
+41. g7h6-h6 e8g6-f7 
+42. d6e7-e7 g4h4-h4 
+43. d3d4-d4 f6h4-g5 
+44. d7e7-e7 h4h5-h5 
+45. f7f5-f6 i3i4-i4 
+46. f6f4-f5 f1f2-e2 
+47. h2h3-g3 g7g5-g6 
+48. d4d5-d5 h6h5-h5 
+49. g3f3-f3 e4e5-e5 
+50. e9-e8 i4g4-h4 
+51. d5d6-d6 g6-f6 
+52. d6d7-d7 h4f6-g5 
+53. c7d7-c6 e5e7-e6 
+54. e9d8-d8 i5g5-h5 
+55. c7-d7 g5e7-f6 
+56. c7-b6 f6f4-f5 
+57. b6d6-b5 f4f3-f3 
+58. f1-g1 g4e6-f5 
+59. c5e5-d5 d6d7-d7 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "Sumo"]
+[White "El Boana"]
+[Result "8(L)-14(W)"]
+
+1. i1g3-h2 a1c3-b2 
+2. i5g5-h5 a2c4-b3 
+3. h2f4-g3 a3c5-b4 
+4. i3g5-h4 a4b5-b5 
+5. h4f4-g4 b6d6-c6 
+6. h1-h2 b4d4-c4 
+7. h6h5-h5 b1b3-b2 
+8. i2h2-h2 d5e6-e6 
+9. g3e5-f4 c4e4-d4 
+10. h4f4-g4 f6e6-e6 
+11. g6g4-g5 b3d3-c3 
+12. h1h3-h2 e6d5-d5 
+13. b3-a2 a5-b6 
+14. h3f5-g4 e3f3-f3 
+15. i4-i3 b6b4-b5 
+16. h5g5-g6 b2d4-c3 
+17. a2-a1 c3e5-d4 
+18. h5g6-g6 d3-e3 
+19. a1-b1 e3g3-f3 
+20. g2-h1 f3h3-g3 
+21. b1-c2 i3g3-h3 
+22. f7-e7 c6c4-c5 
+23. c2-d3 g3-g2 
+24. h1-i1 c5e5-d5 
+25. d3-e3 b5-c5 
+26. e3-d2 f3f5-f4 
+27. f7-e8 b4d6-c5 
+28. f7-f8 b3c3-c3 
+29. d2-e3 c4d4-d4 
+30. h4-i4 d3f4-e4 
+31. f3e3-f2 e4g4-f4 
+32. h2-h1 d5f4-e5 
+33. f8-g7 e5g3-f4 
+34. i1-i2 h4h2-h3 
+35. f2-e3 g2h2-h2 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "El Boana"]
+[White "Sumo"]
+[Result "Unknown"]
+
+1. i1g3-h2 a5c5-b5 
+2. i2g4-h3 a1c3-b2 
+3. h2f4-g3 a3c3-b3 
+4. i3g5-h4 b6-c6 
+5. i4h5-h5 b3d5-c4 
+6. h3f5-g4 d6-d7 
+7. g6e6-f6 c5c3-c4 
+8. h4f6-g5 d7-d8 
+9. h6h5-h5 b1d3-c2 
+10. h1-h2 a4-a3 
+11. i5h5-h6 a3-a4 
+12. e6-d6 e4-e3 
+13. h6f6-g6 b4d4-c4 
+14. h2g3-g2 a4-b4 
+15. e7e5-e6 e3-d2 
+16. g4e4-f4 c2-c1 
+17. h4f6-g5 c6b5-b5 
+18. g6g5-g5 d8-e8 
+19. g4-g3 e2-e3 
+20. e6e4-e5 d2e2-d1 
+21. e3e5-e4 e1-e2 
+22. g2f3-f2 e2-d2 
+23. f2d3-e3 c1d2-d2 
+24. f4d5-e5 b4d4-c4 
+25. e7e5-e6 a4-b4 
+26. g5f6-f6 a3-a4 
+27. c5e5-d5 b5-c5 
+28. e6e4-e5 e2-f1 
+29. d6-e6 c5c4-c4 
+30. e7f6-f6 d2-c1 
+31. d3e3-d2 a4-b5 
+32. e2c2-d2 d4c3-c3 
+33. g2e4-f2 d1b1-c1 
+34. f2d3-e3 a1b2-b2 
+35. f5d4-e5 b4c4-c4 
+36. e3c3-d3 b1b2-b2 
+37. d2-e3 e1f1-e2 
+38. e3c3-d3 d4c4-c4 
+39. d3b3-c3 c4b4-b4 
+40. e5d5-d4 b4b5-c5 
+41. c4b3-b3 f2-f3 
+42. c3c2-c2 12(W)-8(L)
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "El Boana"]
+[White "Sumo"]
+[Result "12(W)-8(L)"]
+
+1. i1g3-h2 a5c5-b5 
+2. i2g4-h3 a1c3-b2 
+3. h2f4-g3 a3c3-b3 
+4. i3g5-h4 b6-c6 
+5. i4h5-h5 b3d5-c4 
+6. h3f5-g4 d6-d7 
+7. g6e6-f6 c5c3-c4 
+8. h4f6-g5 d7-d8 
+9. h6h5-h5 b1d3-c2 
+10. h1-h2 a4-a3 
+11. i5h5-h6 a3-a4 
+12. e6-d6 e4-e3 
+13. h6f6-g6 b4d4-c4 
+14. h2g3-g2 a4-b4 
+15. e7e5-e6 e3-d2 
+16. g4e4-f4 c2-c1 
+17. h4f6-g5 c6b5-b5 
+18. g6g5-g5 d8-e8 
+19. g4-g3 e2-e3 
+20. e6e4-e5 d2e2-d1 
+21. e3e5-e4 e1-e2 
+22. g2f3-f2 e2-d2 
+23. f2d3-e3 c1d2-d2 
+24. f4d5-e5 b4d4-c4 
+25. e7e5-e6 a4-b4 
+26. g5f6-f6 a3-a4 
+27. c5e5-d5 b5-c5 
+28. e6e4-e5 e2-f1 
+29. d6-e6 c5c4-c4 
+30. e7f6-f6 d2-c1 
+31. d3e3-d2 a4-b5 
+32. e2c2-d2 d4c3-c3 
+33. g2e4-f2 d1b1-c1 
+34. f2d3-e3 a1b2-b2 
+35. f5d4-e5 b4c4-c4 
+36. e3c3-d3 b1b2-b2 
+37. d2-e3 e1f1-e2 
+38. e3c3-d3 d4c4-c4 
+39. d3b3-c3 c4b4-b4 
+40. e5d5-d4 b4b5-c5 
+41. c4b3-b3 f2-f3 
+42. c3c2-c2 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "Sumo"]
+[White "Frog Prince"]
+[Result "8(L)-11(W)"]
+
+1. i1g3-h2 a4c4-b4 
+2. i5g5-h5 a2c4-b3 
+3. h2f4-g3 a3c3-b3 
+4. i3g3-h3 b3d5-c4 
+5. h3f5-g4 b4d4-c4 
+6. i4h5-h5 b6b5-b5 
+7. h6g6-g6 b1b2-b2 
+8. h4f6-g5 b4d6-c5 
+9. e6e5-e5 b3d5-c4 
+10. i2-h3 c4e6-d5 
+11. h3f5-g4 c6c5-c5 
+12. f7-g7 e7f6-f6 
+13. h4-h3 a1b2-a2 
+14. h1-g2 b3-b4 
+15. g4e6-f5 d3d5-d4 
+16. g7g6-g6 a2-b3 
+17. d7-e7 b4d6-c5 
+18. f7-g7 e7f6-f6 
+19. h4h3-h3 a5-b6 
+20. f3f5-f4 e3-d2 
+21. h3g3-g3 b6b5-b5 
+22. h5g6-g6 e8-e7 
+23. e4e6-e5 e8-d7 
+24. g2f3-f3 g5g4-g4 
+25. g2-f2 d2-d3 
+26. h6g6-h5 b4d4-c4 
+27. e7e5-e6 g4g3-g3 
+28. g1f2-f1 b3d5-c4 
+29. f6g5-g5 g2-f2 
+30. g7g5-g6 g3-g2 
+31. h2-g3 g2f2-f2 
+32. d1-c1 c6e6-d6 
+33. g4g3-g3 c3d3-c2 
+34. f1-g1 d7-e7 
+35. g1g3-g2 c4e6-d5 
+36. c1-b1 d6f5-e6 
+37. h3f3-g3 d2c2-d3 
+38. g2e4-f3 c1-d2 
+39. f7g6-g7 d2-c2 
+40. b1-b2 e2-d2 
+41. b2-a2 d3c3-c3 
+42. a2-a1 c2-b2 
+43. h6g7-g6 e7-d6 
+44. f4f3-f3 b5d5-c5 
+45. f4f2-f3 c5e5-d5 
+46. g3e3-f3 d6d5-d5 
+47. f3d2-e3 c4d4-d4 
+48. f2d3-e3 a3b3-b4 
+49. g6g5-g5 d4f5-e5 
+50. c1-c2 e5g5-f5 
+51. e3f3-f3 f6g5-g5 
+52. a1-b1 g5h5-h5 
+53. g4-g5 c4d5-d4 
+54. b1d3-c2 f5h3-g4 
+55. f3e4-e4 i5h5-h5 
+56. d4c3-c3 e6e5-e5 
+57. c3b2-b2 g4e4-f4 
+58. c2d2-d2 b4c4-c4 
+59. d2e3-e3 c4e4-d4 
+60. g2g3-g3 d3-c3 
+61. a1b2-a2 g5h4-h4 
+62. f7-f6 c3e5-d4 
+63. f1e2-e2 f3f5-f4 
+64. f7-e7 f6-e6 
+65. e2e3-f2 i3h4-h4 
+66. a2-b2 e5f4-f4 
+67. h2-g2 h3g3-g3 
+68. e3-d3 d4f3-e4 
+69. h1-h2 f4g3-g3 
+70. b3-c3 h5f5-g5 
+71. f2-e2 i2g2-h2 
+72. e2d2-d2 f2f3-f3 
+73. b1b2-b2 g3h2-h2 
+74. b3-c4 i1h2-h2 
+75. c4-d4 e6f5-f5 
+76. c2c3-c3 f5g4-g4 
+77. i2-i1 g3h2-h2 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "Frog Prince"]
+[White "Sumo"]
+[Result "8(L)-10(W)"]
+
+1. i2g4-h3 a5c5-b5 
+2. i1g3-h2 a1c3-b2 
+3. h5f5-g5 a3c3-b3 
+4. i3g3-h3 a2b2-b2 
+5. h1-g2 b1d3-c2 
+6. i5h6-h5 a4b5-b5 
+7. i4g6-h5 b6c6-c6 
+8. f7-f6 b3d5-c4 
+9. g2-f2 c4e4-d4 
+10. f2-e3 c3d3-d3 
+11. g5e5-f5 f3e4-e4 
+12. h5-g5 e3-f3 
+13. h2h4-h3 b4-b3 
+14. f2-e3 b3d3-c3 
+15. f2g2-g2 f3d4-e4 
+16. g2-f3 d4c4-c4 
+17. g5e5-f5 c4b4-b4 
+18. h5-g5 a4b4-b4 
+19. h2-g2 c3-b3 
+20. g6-f7 e3-e2 
+21. f7-e7 c4e6-d5 
+22. f3f5-f4 f7-e8 
+23. e7-f7 b4-c4 
+24. g2-h2 e8-e7 
+25. f7g6-g6 c4e6-d5 
+26. f4f5-f5 b3-c4 
+27. h4g4-g4 c2e4-d3 
+28. f6f5-f5 c4e6-d5 
+29. h4f4-g4 d5f6-e6 
+30. g4g5-g5 g7f7-f8 
+31. g5-g4 e8e6-e7 
+32. g6h5-g5 b5c5-c5 
+33. h6-g6 e2-f2 
+34. d4e4-e4 c2d3-c3 
+35. f5f3-f4 f1-e2 
+36. h3g4-g4 c6e6-d6 
+37. e4f3-f3 h1-i1 
+38. f2f4-f3 c3e5-d4 
+39. g4f4-f4 f7f5-f6 
+40. g2e4-f3 i1-i2 
+41. g6g5-g5 f6f4-f5 
+42. d4e4-e4 i2-i1 
+43. g5g3-g4 f8-e8 
+44. f1f3-f2 e2-d2 
+45. f2f4-f3 g1-f2 
+46. h3f5-g4 f6-g5 
+47. g2g4-g3 c4d5-d5 
+48. h5h4-h4 e7e5-e6 
+49. g5f5-f5 d5c5-c4 
+50. f4f3-f3 c4e4-d4 
+51. f6f5-f5 e8g6-e7 
+52. h4f4-g4 e6c6-d5 
+53. g4f5-f5 d3-c3 
+54. f2e3-e3 f1-f2 
+55. d3e3-e3 g5-h4 
+56. e6f5-f5 g1-f1 
+57. g2g4-g3 b4-c4 
+58. e3e5-e4 d2-e3 
+59. e4e6-e5 b2d4-c2 
+60. e2f2-f2 f1-e2 
+61. g5e5-f5 h4-g5 
+62. g2f2-f2 d1-d2 
+63. e2f2-f2 g5f6-f6 
+64. g2g4-g3 c2e4-d3 
+65. d7-d6 e8-d7 
+66. e5e6-e6 c5d5-d5 
+67. f2-e2 d2f3-e3 
+68. g5g4-g4 f3-f2 
+69. g4g3-g3 g1-f1 
+70. i3g3-h3 f2d3-e3 
+71. h3f3-g3 d2-c2 
+72. e3-f2 f1-e1 
+73. h4-g4 d3f4-e4 
+74. d6f5-e6 e8-f7 
+75. f2-e3 e1-f1 
+76. f5g4-g4 i1i2-i2 
+77. f3h3-g3 i2-i1 
+78. e2e3-f2 f1-e2 
+79. g2f2-f2 d1-d2 
+80. h3f3-g3 d2-d3 
+81. h4i3-h3 f7f6-f6 
+82. g4g3-g3 d3f4-e4 
+83. g2g3-g3 d7-d6 
+84. i2h2-h2 d6d5-d5 
+85. e3d3-d3 c4e4-d4 
+86. g2g4-g3 b3-c4 
+87. h1-g2 f3-e3 
+88. g4g5-g5 g7-f7 
+89. f2-f3 e3e5-e4 
+90. g6g5-h5 f6f4-f5 
+91. f2e2-e3 d4f3-e4 
+92. g3h2-h2 e4g2-f3 
+93. c3d3-d4 c4e6-d5 
+94. h4h2-h3 f3g2-g2 
+95. h3h2-h2 f6f4-f5 
+96. h1-g1 f3-g3 
+97. i1-i2 g3g2-g2 
+98. i2h2-h2 c2-d3 
+99. d2e3-e3 f7-f6 
+100. h2g2-g2 f6f4-f5 
+101. f2e3-e3 f5f3-f4 
+102. f1-e1 f4f2-f3 
+103. e1-d1 f2e2-e2 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "El Boana"]
+[White "Frog Prince"]
+[Result "14(W)-8(L)"]
+
+1. i1g3-h2 a5c5-b5 
+2. i2g4-h3 a4c4-b4 
+3. h2f4-g3 a3c5-b4 
+4. i3g5-h4 b1-c2 
+5. i4h5-h5 c2-d3 
+6. h6f6-g6 b6-c6 
+7. h1-h2 a2b2-b2 
+8. h4f6-g5 c2d3-d3 
+9. h2h3-h3 b4d6-c5 
+10. h4f6-g5 a1b2-b1 
+11. g5e5-f5 b1b3-b2 
+12. g4e6-f5 c2e4-d3 
+13. f7d6-e7 a3-a2 
+14. e7e5-e6 a2b2-b2 
+15. i5h5-h5 b6-c7 
+16. f6f5-f5 b3d5-c4 
+17. f6f4-f5 f2-e2 
+18. g4e4-f4 b1b2-b2 
+19. h3f3-g3 c7d7-d7 
+20. f5d4-e5 d7e7-e7 
+21. h5g5-g5 d5f6-e6 
+22. g3e5-f4 a1-a2 
+23. f3d4-e4 a4c6-b5 
+24. e3e5-e4 d7f6-e7 
+25. f4f5-f5 d2e2-e3 
+26. d4f5-e5 e3f2-f3 
+27. h4f6-g5 a2-a1 
+28. d3-d4 a1-b1 
+29. g5e7-f6 c7-d8 
+30. d7f6-e7 b1c2-c2 
+31. d6d4-d5 d8-d7 
+32. g5e7-f6 c6-d6 
+33. d7f6-e7 c7-c6 
+34. d3d5-d4 d2-d3 
+35. g5e7-f6 c7-d8 
+36. d5d4-d4 c2d2-d2 
+37. d7d6-d6 g2f3-f2 
+38. e6e4-e5 e1-f1 
+39. d3c3-c3 b4b5-b5 
+40. b3d5-c4 f1f2-f2 
+41. f5d6-e6 d2-d3 
+42. e6c6-d6 a3-b4 
+43. b6d6-c6 b2-c2 
+44. c6e6-d6 c2d3-d3 
+45. f4f6-f5 d8-d7 
+46. f5f7-f6 f2-g2 
+47. f8f6-f7 b4-b3 
+48. d4d6-d5 g2e4-f3 
+49. e5e7-e6 f3d4-e4 
+50. f7e8-e8 g6-g5 
+51. d7d5-d6 e9-f8 
+52. d8e8-e8 e2-f2 
+53. f5f7-f6 f2-f3 
+54. f6d5-e6 a2-b2 
+55. d5c5-c5 h5g5-g6 
+56. c5b5-b5 
+
+[Event "Arbitrary Game Competition"]
+[Site "University of Waterloo, Waterloo, Ont, Canada"]
+[Date "Saturday, March 27, 1993"]
+[Round "none"]
+[Black "Frog Prince"]
+[White "El Boana"]
+[Result "8(L)-13(W)"]
+
+1. i5g5-h5 a1c3-b2 
+2. i4g4-h4 a2c4-b3 
+3. i3g3-h3 b2d4-c3 
+4. i2h2-h2 a3c5-b4 
+5. h1f3-g2 b1-b2 
+6. h6-g6 a4b5-b5 
+7. h3f5-g4 b3d5-c4 
+8. h2-h3 c5e5-d5 
+9. g2f3-f2 b4d4-c4 
+10. i1h2-h1 b2-b3 
+11. h1-h2 a5b5-b5 
+12. f2e3-e3 d5d4-d4 
+13. g2-f2 b5c5-c5 
+14. f2-g2 c4e4-d4 
+15. h1-i1 b6-c7 
+16. d2-e2 c7c5-c6 
+17. g2-f2 b3d3-c3 
+18. e2f2-f2 c3e3-d3 
+19. h5f5-g5 f2f4-f3 
+20. g1-f2 d6f5-e6 
+21. i2-i3 c4e6-d5 
+22. h6-h5 e6g4-f5 
+23. e5-e6 c5d5-d5 
+24. i3g5-h4 h3f5-g4 
+25. h4f6-g5 e3f3-f3 
+26. i2h3-i3 f3f5-f4 
+27. i1-h1 f4f6-f5 
+28. d6e7-e7 g4g3-f4 
+29. f8-e8 d4f3-e4 
+30. h1h2-h2 e4e6-e5 
+31. i3h3-h3 e5e7-e6 
+32. g6f7-f7 c6d7-d7 
+33. f7-g6 d7e8-e8 
+34. g5g6-g6 e6e8-e7 

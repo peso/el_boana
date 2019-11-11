@@ -1,0 +1,325 @@
+
+                     Attention all programmers!
+
+
+             The University of Waterloo's Computer Science Club 
+                        is proud to announce the
+
+                               First
+                       Arbitrary Game Competition
+
+                              featuring
+
+                               Abalone
+
+
+
+When: March 27, 1993
+
+Where: University of Waterloo, Waterloo, Ontario, Canada
+
+What: Have you always wanted to program a computer to play a game?
+
+      Do you feel nervous entering your program in a tournament where
+      other programmers have been honing their programs for several
+      years?
+
+      Do you want to try an algorithm different from the standard
+      alpha-beta pruned searching?
+
+      Well, then come enter the First International Arbitrary Game
+      Competition. This competition will (hopefully) be held twice a
+      year. The main theme of the competition is designing programs to
+      play a large variety of games.
+
+      The problem with most other competitions (and this includes the
+      University of Waterloo's Annual Computer Othello Tournament) is
+      that many of the entrants have been implementing and honing
+      their programs for many years. In addition, most of them are
+      loath to give away details of how their program works for fear
+      someone will use an improved version of their own algorithm
+      against them in the next tournament.
+
+      The Arbitrary Game Competition is designed so that each
+      tournament will feature a different game, thus allowing the
+      programmers to explore different types of games over the course
+      of several competitions. For example, one tournament may be
+      based on full information games (such as checkers / chess /
+      othello), another tournament may be based on partial information
+      games (such as bridge / poker / backgammon), a third tournament
+      may be based dealing with random events during play (board games
+      such as Risk / Star Fleet Battles / XBattle / Empire), while yet
+      another tournament may be based on interaction with other
+      programs (such as Diplomacy).
+
+      In addition, no game will ever be repeated, thus encouraging
+      entrants to exchange ideas on how they programmed for the
+      previous tournament without giving themselves a disadvantage for
+      the next tournament.
+
+      So without further ado, I am proud to announce that the game
+      chosen for this upcoming competition is Abalone (a full
+      information game).
+
+
+Abalone Rules:
+      1) The board consists of a hexagonal grid (5 spaces along each
+         edge).
+
+      2) There are two sides to the game: black and white. Each side
+         is in control of 14 marbles.
+
+      3) These marbles are arranged as below:
+
+             O = white marble
+             # = black marble
+             . = empty space
+
+                            # # # # #
+                           # # # # # #
+                          . . # # # . .
+                         . . . . . . . .
+                        . . . . . . . . .
+                         . . . . . . . .
+                          . . O O O . .
+                           O O O O O O
+                            O O O O O
+
+      4) A player may move up to 3 marbles of their own colour
+         connected in a line one space in any direction provided the
+         spaces to be occupied are emptied. Moves are either a
+         LINE/PUSH or a BROADSIDE/ROLL.
+
+         A LINE/PUSH is when the player moves 1, 2, or 3 marbles in a
+         line by pushing on the last marble.
+
+                  . . # . . . . . .  ==>  . . . # . . . . .  OR
+
+                                          . # . . . . . . .
+
+
+                  . . # # . . . . .  ==>  . . . # # . . . .  OR
+
+                                          . # # . . . . . .
+
+
+                  . . # # # . . . .  ==>  . . . # # # . . .  OR
+
+                                          . # # # . . . . .
+
+         This can be in any of the six directions.
+
+         A BROADSIDE/ROLL is when 2 or 3 marbles move in any direction
+         other than towards either end of the line:
+
+                  . . # # . . . . .  ==>  . . . . . . . . .  OR
+                   . . . . . . . .         . . # # . . . .
+
+                                          . . . . . . . . .
+                                           . # # . . . . .
+
+
+                  . . # # # . . . .  ==>  . . . . . . . . .  OR
+                   . . . . . . . .         . . # # # . . .
+
+                                          . . . . . . . . .
+                                           . # # # . . . .
+
+      5) More than three marbles of a single colour may NOT be moved
+         in a single maneuver.
+
+      6) If the player is making a LINE/PUSH move, the player may
+         "push" up to one fewer of the opponent's marbles provided
+         there is an empty space or the edge of the board beyond the
+         opponent's marbles.
+
+         For example, if a player is moving three marbles in a
+         LINE/PUSH move, then the player may "push" either 1 or 2
+         opponent marbles to create the empty space for moving.
+
+         Examples of valid pushes are:
+
+                  . . # # # O . . .  ==>  . . . # # # O . . (3 to 1)
+
+                  . . # # # O O . .  ==>  . . . # # # O O . (3 to 2)
+
+                  . . # # O . . . .  ==>  . . . # # O . . . (2 to 1)
+
+         This is called "sumito" (numerical superiority allowing
+         forcing).
+
+      7) A player is not obligated to push.
+
+      8) If the opponent's marble is forced off the edge of the
+         playing field, then that piece is lost.
+
+      9) The first player to lose 6 marbles loses the game.
+
+      10) No board position may repeat (the Ko rule for Abalone).
+
+
+Notation Rules:
+      1) The coordinate system of the board will be as follows:
+
+             Each row (starting at the bottom with white) will be
+             lettered successively starting at 'a'
+
+             Each space within a row, starting the the leftmost space,
+             will be numbered successively starting at '1'
+
+         Thus the valid coordinates are a1-a5, b1-b6, c1-c7, d1-d8,
+         e1-e9, f1-f8, g1-g7, h1-h6, and i1-i5.
+
+                        i  # # # # #
+                       h  # # # # # #
+                      g  . . # # # . .
+                     f  . . . . . . . .
+                    e  . . . . . . . . .
+                     d  . . . . . . . .
+                      c  . . O O O . .
+                       b  O O O O O O
+                        a  O O O O O
+
+         As an example, the following marbles are at positions h2, e5,
+         and a5.
+
+                        i  . . . . .
+                       h  . # . . . .
+                      g  . . . . . . .
+                     f  . . . . . . . .
+                    e  . . . . # . . . .
+                     d  . . . . . . . .
+                      c  . . . . . . .
+                       b  . . . . . .
+                        a  . . . . #
+
+
+      2) Moves will be marked as:
+
+                <tail marble pos><head marble pos>-<new tail marble pos>
+
+         When moving a single marble, no <head marble> is recorded.
+         This notation makes sense since people push the tail marble to
+         move a row.
+
+         Examples of this notation is given below:
+
+                   i  . . . 3 .               i  . . . . .
+                  h  2 2 2 . 3 .             h  . 2 2 2 3 .
+                 g  . . . . . 3 .           g  1 . 4 . . 3 .
+                f  . 1 4 . 5 5 . 6         f  1 . 4 . . . 3 .
+               e  . 1 4 . . . . 6 .   ->  e  1 . 4 . . 5 5 . 6
+                d  1 4 . 7 . 8 . .         d  . . . . . . . 6
+                 c  . . 7 . . 8 .           c  . . 7 . . 8 .
+                  b  . . . . . .             b  . 7 . 9 . 8
+                   a  . . 9 . .               a  . . . . .
+
+                1. d1f2-e1
+                2. h1h3-h2
+                3. i4g6-h5
+                4. d2f3-e3
+                5. f5f6-e6
+                6. f8e8-e9
+                7. d4c3-c3
+                8. d6c6-c6
+                9. a3-b4
+
+      3) Note that a broadside move could be marked in one of two
+         ways:
+
+                1. d1f2-e1
+             or 1. f2d1-g1
+
+
+         To make this move recorded by only a single notation, an
+         additional restriction is placed on the recording of
+         broadside moves. All broadside moves will be considered a
+         push move with an offset. Thus, to record the move, pretend
+         that the broadside was instead a push in the direction
+         closest to the intended direction of broadside, and use that
+         orientation for the move specification. For example:
+
+                The marbles d1f2 (or f2d1) can be pushed in a line
+                either north-east or south-west.
+
+                Since the broadside is moving north-west, the push
+                angle closest to this is north-east.
+
+                A push towards the north-east would have d1 as the
+                tail marble.
+
+                Thus the move is marked as d1f2-e1.
+
+         The theory behind this is that all moves must be recorded so
+         that the motion is "forwards".
+
+      4) A complete game will have the following notation:
+
+                [Event "1st U. of Waterloo Arbitrary Game Contest"]
+                [Site "University of Waterloo, Waterloo, ONT, Canada"]
+                [Date "1993.03.27"]
+                [Round "1"]
+                [Black "George Smith"]
+                [White "Smash 93"]
+                [Result "13(W)-8(L)"]
+
+                1. <black move> <white move> 2. <black move> <white move> 3.
+                <black move> <white move> 4. <black move> ...........
+                127. <black move> 13(W)-8(L)
+
+         Results are always specified by number of marbles remaining
+         for each side and the result for that side.
+
+         Possible letter indications are W=Win, L=Loss, T=Tie,
+         R=Resigned, and *=Ran Out of Time
+
+Tournament Rules:
+      1) Each side is limited to 40 minutes of playing time with a
+         maximum of 200 moves per side.
+
+      2) There is currently a server being worked on that will
+         hopefully ease the tournament play. If the server is ready in
+         time for the tournament, then any program using the server
+         will have exactly 40 minutes of playing time. Any program
+         that must go through a human interface to reach the server
+         will have the human server time be counted against the
+         program (however, the program will be given an extra 5
+         minutes to offset this disdavantage ie. the program will be
+         givem exactly 45 minutes to play).
+
+      3) Any program that runs out of time will lose that game.
+
+      4) A program will be given up to 30 minutes extra to solve any
+         hardware/software problems that occur during the tournament.
+
+
+Competition Rules:
+      1) The programs may be written for any machine. The University
+         of Waterloo site will try to provide appropriate hardware,
+         but if none is available, alternate arrangements will be made
+         to run the program at the author's site.
+
+      2) In hopes of spreading around experiences gained with this
+         tournament (and since the code cannot be used in another
+         Waterloo tournament), it is requested that all program
+         writers please submit a 3-5 page document on the day of the
+         tournament describing the techniques used in their programs
+         (this can be longer if an author has a really interesting
+         idea). The results will be put together for a "proceedings"
+         that will be distributed to everybody.
+
+
+Miscellaneous:
+      1) Any questions/inquiries/registration can be sent to:
+
+                     eadengler@watcgl.uwaterloo.ca
+                 OR  csc@watmath.uwaterloo.ca
+
+         Anybody who registers will be placed on a mailing list so
+         that any discussion with respect to strategy/ideas/concepts
+         can be passed on to all contestants.
+
+
+Good luck, and please enter!!!!
+
+Ed Dengler

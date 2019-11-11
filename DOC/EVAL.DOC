@@ -1,0 +1,79 @@
+The following features will be taken into account in El Boana's evaluator:
+
+
+1. Push Mobility
+~~~~~~~~~~~~~~~~
+
+This feature counts the number of moves available to each player which
+push opponent's discs.  This quantity should be maximized.  If you have
+enough choices in pushing your opponent's discs, you will have a strong
+central position while your opponent will be scattered, which is good.
+
+
+2. Potential Push Mobility
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This feature counts discs which have the potential to be pushed.  In addition,
+discs which are close to being pushed off the edge are especially important.
+The feature is computed as follows:
+
+- discs which can be removed in one push count as 4 points
+- discs which can be removed in two pushes count as 2 points
+- discs which can be removed in three or more pushes count as 1 point each
+
+
+3. Capturable Discs
+~~~~~~~~~~~~~~~~~~~
+
+This feature is a subset of the previous one, counting only discs which can
+be immediately removed from the board.  It is maintained separately so that
+captures can be recognized one move earlier.  This will detect the end of
+the game one move earlier than otherwise, and the evaluator can use a more
+accurate count of each side's disc count.
+
+
+4. Frontier Discs
+~~~~~~~~~~~~~~~~~
+
+Here we simply count the number of frontier discs for each side, once in
+each direction.  Note that a disc on the edge is also defined to be a 
+frontier disc.  A player should probably try to minimize their frontier
+discs in an attempt to form a dense cluster of discs scattering the
+opponent on all sides.
+
+###### this feature is not useful ############
+
+
+5. Disc Strength
+~~~~~~~~~~~~~~~~
+
+Along each line, discs which are adjacent or are separated only by empty
+squares are counted together as a group.  Each disc in a group is given
+a value dependent on the size of that group, as follows:
+
+- discs which are singletons are worth 1 point each
+- discs which are part of a pair of two are worth 2 points each
+- discs in a group of three or more are worth 3 points each
+
+
+6. Controlled Region
+~~~~~~~~~~~~~~~~~~~~
+
+This final feature maintains an estimate of the region of the board
+controlled by each player.  It is defined from groups defined above as
+follows:
+
+- groups of 3 or more control a margin of 2 squares from each end of the
+	group, as well as all discs and spaces within the group
+- groups of 2 control a margin of 1 square
+- singleton groups control only the square which they occupy
+
+In the case of shared control of a square, neither side is assigned control.
+Maximizing the controlled region size should be crucial.
+
+###### this feature is not useful ############
+
+Wedged Discs
+
+Compactness Quotient
+

@@ -1,0 +1,107 @@
+From cmspring Sun Mar  7 16:08:07 1993
+Received: from cayley.uwaterloo.ca by descartes.uwaterloo.ca id <246058-3>; Sun, 7 Mar 1993 16:07:55 -0500
+Subject: Abalone
+From: Colin Springer <cmspring>
+To: eadengle@watcgl, cmspring@cayley
+Date: Sun, 7 Mar 1993 16:07:47 -0500
+In-Reply-To: <9303040410.AA28345@watcgl.uwaterloo.ca>; from "Ed \"Cynwrig\" Dengler" at Mar 3, 93 11:10 pm
+X-Mailer: ELM [version 2.3 PL11]
+Message-Id: <93Mar7.160755est.246058-3@descartes.uwaterloo.ca>
+Status: OR
+
+
+Abalone program authors!
+
+Well, my program is still brain-dead with no evaluator to speak of, so
+I'm afraid I don't have much to contribute on the evaluation front.  This
+will be my major task over the next few weeks.  However, I do have my
+searching routines in what's likely to be near-final form, so I can
+share a few ideas I've had about that.
+
+First of all, it's clear that generating moves is usually the greatest time
+drain on a program.  A large part of this is due to the BROADSIDE/ROLL moves,
+which can be cumbersome to compute.  I ran tests which indicated that among
+all nodes at which a decision had to be made, such a move was optimal about
+once in 500 such nodes.  Hence my program only generates LINE/PUSH moves
+at the last ply searched.  Due to the large effective branching factor of 
+Abalone (I'm getting slightly over 10 -- how about everybody else?) this
+cuts BROADSIDE/ROLL move generation to a small fraction of its earlier
+time usage, with only minimal impact on the tree searched.  Of course,
+by pruning these moves earlier, we'd cut this time down even further, but
+I'm guessing that the dangers would overcome the savings.
+
+Efficiently generating LINE/PUSH moves is an easier task.  My program has
+6 routines (one per direction) which are called.  This was a substantial
+improvement over using just one routine, due to the extra optimizations
+the compiler can make.  
+
+I'm sure there are even more efficient ways to generate moves.  The
+first would be a table-based system.  Each move of this type depends
+only on discs along one line (horizontal or diagonal), so we could
+store all possible disc configurations along lines of length 5-9,
+in tables of sizes 3^5,...,3^9.  With each configuration, it would be
+fairly easy to store a bitmap telling when it's possible to move to a
+certain square.  Once you know that a move can in fact be made, it's
+more efficient to generate it and since most of the time a move cannot be
+made, this will eliminate a large portion of the computation.
+
+My second idea is to use a bitfield representation of the board.  If we
+stored masks of locations of black and white marbles on each row, then
+by low-level bit operations we can determine, in parallel, all moves on
+that row in a certain direction.  For example, suppose B[n], W[n], E[n],
+and EL[n] are masks for black discs, white discs, empty squares, and empty
+squares on the board.  Then to test for moves in an upward direction, we
+could use a code fragment such as the following:
+
+mask = B[n];
+if( mask != 0 ) {
+	legal_mask = mask & EL[n-1];
+	mask &= B[n-1];
+	if( mask != 0 ) {
+		legal_mask |= mask & (EL[n-2] | W[n-2]&E[n-3] );
+		mask &= B[n-2];
+		if( mask != 0 ) {
+			legal_mask |= mask & EL[n-3];
+			mask &= W[n-3];
+			if( mask != 0 ) {
+				legal_mask[n] |= mask & 
+						(E[n-4] | W[n-4]&E[n-5] );
+			}
+		}
+	}
+}
+
+Note that most of the time very little computation will be required.  This
+method was used by the Othello program Brutus for this year's CSC Othello
+Open, allowing it to search upwards of 100,000 n/s on a 486/50.  Since
+Othello moves are much slower to generate than Abalone LINE/PUSH moves,
+even greater speeds should be possible (although I'm nowhere near that).
+
+Since my program doesn't do any sophisticated ordering, I don't have much
+to contribute there.  I simply use hash tables to recognize positions from
+an earlier iteration, as well as killer moves which keep track of recent
+good moves for black and white at each level.  Beyond this, only a static
+ordering is used, basically testing moves towards the center before those
+moving towards the edge.
+
+One obvious problem with Abalone is that with such a large branching factor,
+any deep searching is impossible.  This means that programs seem to have
+trouble seeing even fairly close marble captures by either side.  An idea
+I had to combat this leads to selective extensions of the search tree.
+Basically, I noticed that in most disc captures, there are several
+marble pushing moves (in which you move your opponent's marbles towards
+the edge).  Hence I decided not to count such moves (which are relatively
+rare) towards the search depth.  So in the iteration of depth 3, say, along
+each line searched we search exactly 3 non-pushing moves (up to some maximum,
+say twice the initial depth, or 6).  This way we'd be more likely to see
+a marble capture 5 or more moves ahead with only a 3-ply lookahead.  I
+think some such method will be quite useful in producing a strong
+program.
+
+Well, that's about the state of the art with my program, and some ideas which
+I haven't had time to implement.  Let's hear some other people's ideas!
+In particular, I'll be very interested to hear what searching methods have
+turned out to be useful, as well as evaluation features which are helpful.
+
+Colin
+
