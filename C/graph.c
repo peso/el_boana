@@ -41,8 +41,11 @@ Returns:
     The _settextposition function returns, as an rccoord structure, the
     previous output position for text.
 */
+#if 0
 struct rccoord _settextposition( short row, short col ) {
-	return 0;
+	  return 0;
+}
+#endif
 
 /**
 Description:
@@ -73,4 +76,5 @@ short _setcolor( short pixval ) {
     _WC_cur_fg_color_inx = pixval;
     return old_pixval;
 }
+
 
