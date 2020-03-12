@@ -26,6 +26,9 @@ struct ui_rgb ui_rgb_inx[16];
 /** Index of current foreground colour. For _VRES16COLOR mode, range is 0..15 */
 short _WC_cur_fg_color_inx;
 
+/** Index of current background colour. For _VRES16COLOR mode, range is 0..15 */
+short _WC_cur_bg_color_inx;
+
 /** Current position used for graphics */
 struct xycoord _WC_gr_pos;
 
@@ -61,6 +64,8 @@ void ui_init()
         ui_rgb_inx[i].b = i&1 ? v : 0;
     }
     _WC_cur_fg_color_inx = 15;
+    _WC_cur_bg_color_inx = 0;
+
     SDL_SetRenderDrawColor(ui_renderer, 10, 20, 0, SDL_ALPHA_OPAQUE);
     SDL_RenderClear(ui_renderer);
     SDL_RenderPresent(ui_renderer);
@@ -191,6 +196,42 @@ short _setcolor( short pixval ) {
     ui_set_sdl_color(_WC_cur_fg_color_inx);
 
     return old_pixval;
+}
+
+/**
+Description:
+    The getbkcolor function returns the current background color. In text
+    modes, the background color controls the area behind each individual 
+    character. In graphics modes, the background refers to the entire screen. 
+    The default background color is 0.
+
+Returns:
+    The getbkcolor function returns the current background color. 
+*/
+long _getbkcolor() {
+    return _WC_cur_bg_color_inx;
+}
+
+/**
+Description:
+    The setbkcolor function sets the current background color to be that of the
+    color argument. In text modes, the background color controls the area 
+    behind each individual character. In graphics modes, the background refers 
+    to the entire screen. The default background color is 0.
+
+    When the current video mode is a graphics mode, any pixels with a zero 
+    pixel value will change to the color of the color argument. When the 
+    current video mode is a text mode, nothing will immediately change; only 
+    subsequent output is affected.
+
+Returns:
+    The setbkcolor function returns the previous background color.
+*/
+long _setbkcolor( long color )
+{
+    long old_color = _WC_cur_bg_color_inx;
+    _WC_cur_bg_color_inx = color;
+    return old_color;
 }
 
 

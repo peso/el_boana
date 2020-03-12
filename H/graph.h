@@ -35,11 +35,10 @@ void ui_scan_ul( unsigned long* var );
 struct rccoord _settextposition( short row, short col );
 #define _clearscreen /* HIDE */
 #define _setvideomode /* HIDE */
-#define _getbkcolor() 0
+long _getbkcolor();
 short _getcolor();
-#define _setbkcolor /* HIDE */
+long _setbkcolor( long color );
 short _setcolor( short pixval );
-#define _setbkcolor /* HIDE */
 struct xycoord _moveto( short x, short y );
 short _lineto( short x, short y );
 #define _floodfill /* HIDE */
