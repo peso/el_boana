@@ -17,6 +17,7 @@ add_executable (ab WIN32
 	${CMAKE_SOURCE_DIR}/c/vga.c
 
 	${CMAKE_SOURCE_DIR}/c/graph.c
+	${CMAKE_SOURCE_DIR}/c/mouse.c
 )
 target_link_libraries (ab ${SDL_LIBRARY})
 target_include_directories(ab PUBLIC ${CMAKE_SOURCE_DIR}/h ${SDL_INCLUDE_DIR} )
