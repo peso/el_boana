@@ -237,6 +237,23 @@ long _setbkcolor( long color )
 
 /**
 Description:
+    The clearscreen function clears the indicated area and fills it with the
+    background color. The area argument must be one of the following values:
+_GCLEARSCREEN area is entire screen
+_GVIEWPORT area is current viewport or clip region
+_GWINDOW area is current text window
+Returns:
+    The clearscreen function does not return a value.
+*/
+void _clearscreen( short area )
+{
+    ui_set_sdl_color(_WC_cur_bg_color_inx);
+    SDL_RenderClear(ui_renderer);
+    SDL_RenderPresent(ui_renderer);
+}
+
+/**
+Description:
     The moveto functions set the current output position for graphics. The
     moveto function uses the view coordinate system. The moveto w function uses
     the window coordinate system.

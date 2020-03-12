@@ -33,7 +33,7 @@ int  ui_getch();
 void ui_scan_ul( unsigned long* var );
 
 struct rccoord _settextposition( short row, short col );
-#define _clearscreen /* HIDE */
+void _clearscreen( short area );
 #define _setvideomode /* HIDE */
 long _getbkcolor();
 short _getcolor();
