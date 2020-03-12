@@ -29,12 +29,12 @@ void initialize()
 
     _clearscreen( _GWINDOW );
     _settextposition( 9, 25 );
-    printf( "EL BOANA : An Abalone Program" );
+    ui_printf( "EL BOANA : An Abalone Program" );
     _settextposition( 11, 30 );
-    printf( "by Colin Springer" );
+    ui_printf( "by Colin Springer" );
 
     _settextposition( 13, 26 );
-    printf( "How much time do I get?      " );
+    ui_printf( "How much time do I get?      " );
     do {
 	_settextposition( 13, 50 );
 	scanf( "%d", &black_game_time );
@@ -46,7 +46,7 @@ void initialize()
     white_time = 0;
 
     _settextposition( 14, 26 );
-    printf( "Shall I go first? (Y/N)      " );
+    ui_printf( "Shall I go first? (Y/N)      " );
     do {
 	_settextposition( 14, 50 );
 	scanf( "%c", &input );
@@ -150,23 +150,23 @@ void initialize()
     draw_board();
 
     _settextposition( 2, 16 );
-    printf ("EL BOANA : An Abalone Program");
+    ui_printf ("EL BOANA : An Abalone Program");
     _settextposition( 2, 60 );
-    printf( "version 1.3" );
+    ui_printf( "version 1.3" );
 
     _settextposition (8, 61);
     if( black_player == HUMAN ) {
-	printf( "Opponent (#)" );
+	ui_printf( "Opponent (#)" );
     } else {
-	printf( "El Boana (#)" );
+	ui_printf( "El Boana (#)" );
     }
     _settextposition (12, 61);
     if( white_player == HUMAN ) {
-	printf( "Opponent (O)" );
+	ui_printf( "Opponent (O)" );
 	hash_key_1[0] = -hash_key_1[0];
 	hash_key_2[0] = -hash_key_2[0];
     } else {
-	printf( "El Boana (O)" );
+	ui_printf( "El Boana (O)" );
     }
 
     put_pieces ();
