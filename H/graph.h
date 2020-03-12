@@ -29,6 +29,8 @@ struct rccoord {
 void ui_init();
 void ui_done();
 void ui_printf( const char* format, ...);
+int  ui_getch();
+void ui_scan_ul( unsigned long* var );
 
 struct rccoord _settextposition( short row, short col );
 #define _clearscreen /* HIDE */

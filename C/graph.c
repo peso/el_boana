@@ -81,6 +81,40 @@ void ui_printf( const char* format, ...)
     SDL_RenderPresent(ui_renderer);
 }
 
+/** #include <conio.h>
+Description:
+    The getch function obtains the next available keystroke from the console.
+    Nothing is echoed on the screen (the function getche will echo the
+    keystroke, if possible). When no keystroke is available, the function waits
+    until a key is depressed.
+
+    The kbhit function can be used to determine if a keystroke is available.
+
+Returns:
+    A value of EOF is returned when an error is detected; otherwise the getch
+    function returns the value of the keystroke (or character).
+
+    When the keystroke represents an extended function key (for example, a
+    function key, a cursor-movement key or the ALT key with a letter or a
+    digit), zero is returned and the next call to getch returns a value for the
+    extended function.
+*/
+int ui_getch()
+{
+    /* TODO wait for 1 keypress */
+    SDL_Delay(100);
+    static int k = 54;
+    k = (k-32) % 90 + 33;
+    return k;
+}
+
+void ui_scan_ul( unsigned long *var )
+{
+    /* TODO print and accept keyboard input */
+    SDL_Delay(2000);
+    *var = 20;
+}
+
 /**
 Description:
     The _settextposition function sets the current output position for text

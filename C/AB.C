@@ -57,7 +57,7 @@ int main(int argc, char* argv[])
 	}
     }
     _settextposition( 28, 1 );
-    getch();
+    ui_getch();
     vga_finish();
     ui_done();
 }

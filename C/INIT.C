@@ -37,7 +37,11 @@ void initialize()
     ui_printf( "How much time do I get?      " );
     do {
 	_settextposition( 13, 50 );
+        #if 0
 	scanf( "%d", &black_game_time );
+        #else
+        ui_scan_ul( &black_game_time );
+        #endif
     } while( black_game_time < 1 || black_game_time > 1024 );
     black_game_time--;		/* reserve a minute, just in case ... */
     black_game_time *= 60*100;
@@ -49,7 +53,13 @@ void initialize()
     ui_printf( "Shall I go first? (Y/N)      " );
     do {
 	_settextposition( 14, 50 );
+        #if 0
 	scanf( "%c", &input );
+        #else
+        input = ui_getch();
+        ui_printf( "%c", input );
+        input = 'n';
+        #endif
     } while( input != 'y' && input != 'n' && input != 'c' );
 
     if( input == 'n' ) {
