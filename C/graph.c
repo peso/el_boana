@@ -297,8 +297,17 @@ short _lineto( short x, short y ) {
     _WC_gr_pos.xcoord = x;
     _WC_gr_pos.ycoord = y;
     
-    /* TODO draw line between old_pos and _WC_cur_pos
+    /* Draw line between old_pos and _WC_gr_pos
        using _WC_cur_fg_color_inx */
+    ui_set_sdl_color(_WC_cur_fg_color_inx);
+    SDL_RenderDrawLine(ui_renderer,
+        old_pos.xcoord, old_pos.ycoord,
+        x, y );
+    SDL_RenderPresent(ui_renderer);
+
+    return 1;
+}
+
 
     return 1;
 }
