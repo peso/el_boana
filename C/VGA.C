@@ -70,6 +70,34 @@ void highlight( uint_8 x, uint_8 y, uint_8 colour )
     _lineto( bx, by );
 }
 
+void fill_hex( uint_8 x, uint_8 y, uint_8 colour )
+{
+    uint_16	bx, by;
+
+    /* calculate coordinates of hexagon's top corner */
+
+    bx = 20*(2*x+y) - 100;
+    by = 35*y + 44;
+
+    _setcolor( colour );
+
+    /* trace hexagon perimeter */
+
+    int xr;
+    for (int dy=0; dy<12; dy++) {
+        xr = 20*dy/12;
+        _moveto(bx-xr, by+dy); _lineto(bx+xr,by+dy);
+    }
+    xr = 20;
+    for (int dy=12; dy<35; dy++) {
+        _moveto(bx-xr, by+dy); _lineto(bx+xr,by+dy);
+    }
+    for (int dy=35; dy<47; dy++) {
+        xr = 20*(47-dy)/12;
+        _moveto(bx-xr, by+dy); _lineto(bx+xr,by+dy);
+    }
+}
+
 
 /* 
  *  The playing board in abalone consists of 61 hexagons, each of which
@@ -86,9 +114,13 @@ void hex( uint_8 x, uint_8 y )
     bx = 20*(2*x+y) - 100;
     by = 35*y + 44;
 
+ #if 0
     highlight( x, y, 3 );		/* draw the hexagon */
  
     _floodfill( bx, by+1, -1 );		/* fill it in */
+#else
+    fill_hex( x, y, 3);
+#endif
 
     highlight( x, y, 0 );		/* redraw the perimeter in black */
 }
