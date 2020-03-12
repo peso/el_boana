@@ -42,4 +42,5 @@ short _setcolor( short pixval );
 struct xycoord _moveto( short x, short y );
 short _lineto( short x, short y );
 #define _floodfill /* HIDE */
-#define _ellipse /* HIDE */
+short _ellipse( short fill, short x1, short y1, short x2, short y2 );
+

@@ -308,6 +308,73 @@ short _lineto( short x, short y ) {
     return 1;
 }
 
+/**
+Description:
+    The ellipse functions draw ellipses. The ellipse function uses the view
+    coordinate system. The ellipse w and ellipse wxy functions use the window
+    coordinate system.
+    
+    The center of the ellipse is the center of the rectangle established by the
+    points (x1,y1) and (x2,y2).
 
+    The argument fill determines whether the ellipse is filled in or has only
+    its outline drawn. The argument can have one of two values:
+        _GFILLINTERIOR fill the interior by writing pixels with the current plot action using the current color and the current fill mask
+        _GBORDER leave the interior unchanged; draw the outline of the figure with the current plot action using the current color and line style
+
+    When the coordinates (x1,y1) and (x2,y2) establish a line or a point (this
+    happens when one or more of the x-coordinates or y-coordinates are equal),
+    nothing is drawn.
+
+Returns:
+    The ellipse functions return a non-zero value when the ellipse was
+    successfully drawn; otherwise, zero is returned.
+*/
+short _ellipse( short fill, short x1, short y1, short x2, short y2 )
+{
+    /* do draw on x1,y1 - do NOT draw on x2,y2 */
+    /* xx*xx + yy*yy = 1
+    xx = x/xr, yy=y/yr
+    xr = (x2-x1)/2
+    line is 1 pix width, 0,0 is upper left
+    xw = 3 -> 3 pix wide, inc line width -> circ is 2 pix
+    center or circ is xw/2+.5
+    */
+    int xw, yw;
+    xw = x2 - x1, yw = y2 - y1;
+    if (xw == 0 || yw == 0) return 1;
+
+    /* x/f*x/f + y*y = r*r
+    f = x/y and r = yw/2 */
+    double xr, yr;
+    double xc, yc;
+    xr = (xw-1)/2.0;
+    yr = (yw-1)/2.0;
+    xc = x1 + 0.5 + xr;
+    yc = y1 + 0.5 + yr;
+
+    if (fill == _GBORDER) {
+        int count;
+        count = 13;
+        SDL_Point points[13];
+        for (int i=0; i<count; i++) {
+            double rad = 2*3.1415 * i / 12;
+            points[i].x = (int)(xc + sin(rad) * xr);
+            points[i].y = (int)(yc + cos(rad) * yr);
+        }
+        SDL_RenderDrawLines(ui_renderer, points, count);
+    }
+    else if (fill == _GFILLINTERIOR) {
+        double dx = 0;    
+        for (int y=0; y<yw; y++) {
+            double dy = y+0.5 - yr;
+            dx = xr * sqrt(1 - (dy/yr)*(dy/yr));
+            SDL_RenderDrawLine(ui_renderer, xc-dx,y1+y, xc+dx,y1+y);
+        }
+    }
+    else {
+
+    }
+    SDL_RenderPresent(ui_renderer);
     return 1;
 }
