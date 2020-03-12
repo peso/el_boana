@@ -8,21 +8,42 @@
 
 uint_16  old_bk, old_col;	/* remember colours to restore when finished */
 
+#ifndef USE_WATCOM_GRAPH_H
+#include <SDL.h>
+/* Resoution as Watcom _VRES16COLOR */
+#define SCREEN_WIDTH 640
+#define SCREEN_HEIGHT 480
+SDL_Window* window = 0; /* Window to render to */
+SDL_Surface* surf = 0; /* Surface inside window */
+#endif
+
 
 void vga_init()
 {
+#ifdef USE_WATCOM_GRAPH_H
     _setvideomode( _VRES16COLOR );
     old_bk = _getbkcolor();
     old_col = _getcolor();
     _setbkcolor( 0 );	/* BLACK */
+#else /* USER_SDL */
+    printf( "FANCY WATCOM GRAPHICS SIMULATOR that uses sdl\n" );
+    if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
+    {
+        printf( "SDL could not initialize. SDL_Error: %s\n", SDL_GetError() );
+        exit(1);
+    }
+#endif
 }
 
 
 void vga_finish()
 {
+#ifdef USE_WATCOM_GRAPH_H
     _setcolor( old_col );
     _setbkcolor( old_bk );
     _setvideomode( _DEFAULTMODE );
+#else /* USER_SDL */
+#endif
 }
 
 

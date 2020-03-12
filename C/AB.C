@@ -13,10 +13,16 @@
 #include "intrface.h"
 
 
+/* Keep C99 happy by declaring functions before they are used. */
+void human_move( int_8 );
+void computer_move( int_8 );
+void print_move( uint_8 depth, uint_8 square, uint_8 type, uint_8 length );
+
+
 uint_8	c_row=5, c_col=5;
 
 
-main()
+int main(int argc, char* argv[])
 {
     bool game_over;
 

@@ -4,6 +4,9 @@
 #include "sysdept.h"
 #include "data.h"
 
+/* Keep C99 happy by declaring functions before they are used. */
+void backup_move( uint_8 depth );
+
 /*
  *  Rules state that repetition of a position is not allowed.  This routine
  *  makes sure the current position does not match any earlier position.
@@ -742,7 +745,8 @@ bool try_move_17( uint_8 depth, uint_8 tail, uint_8 length )
  *  indirectly by move type.  
  */
 
-bool (*move_routine[18]) () = { try_move_0,
+bool (*move_routine[18]) (uint_8, uint_8, uint_8) = {
+				try_move_0,
 				try_move_1,
 				try_move_2,
 				try_move_3,
