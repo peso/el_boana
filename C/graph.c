@@ -2,8 +2,25 @@
   Fake graph.c - simulating Watcom C v6.0 using SDL 
 */
 
+#include "graph.h"
+
 #include <SDL.h>
 
+
+
+
+/* * * * * * * * * * * * * * * * * * * 
+            Global variables
+ * * * * * * * * * * * * * * * * * * */
+
+/** Index of current foreground colour. For _VRES16COLOR mode, range is 0..15 */
+short _WC_cur_fg_color_inx;
+
+
+
+/* * * * * * * * * * * * * * * * * * * 
+        Function implementation
+ * * * * * * * * * * * * * * * * * * */
 
 /**
 Description:
@@ -26,4 +43,34 @@ Returns:
 */
 struct rccoord _settextposition( short row, short col ) {
 	return 0;
+
+/**
+Description:
+    The getcolor function returns the pixel value for the current color. This
+    is the color used for displaying graphics output. The default color value
+    is one less than the maximum number of colors in the current video mode.
+
+Returns:
+    The getcolor function returns the pixel value for the current color.
+*/
+short _getcolor() {
+    return _WC_cur_fg_color_inx;
 }
+
+/**
+Description:
+    The setcolor function sets the pixel value for the current color to be that
+    indicated by the pixval argument. The current color is only used by the
+    functions that produce graphics output; text output with outtext uses the
+    current text color (see the settextcolor function). The default color value
+    is one less than the maximum number of colors in the current video mode.
+
+Returns:
+    The setcolor function returns the previous value of the current color.
+*/
+short _setcolor( short pixval ) {
+    short old_pixval = _WC_cur_fg_color_inx;
+    _WC_cur_fg_color_inx = pixval;
+    return old_pixval;
+}
+

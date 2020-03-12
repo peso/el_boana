@@ -10,9 +10,9 @@
                           
 #define _setvideomode /* HIDE */
 #define _getbkcolor() 0
-#define _getcolor() 0
+short _getcolor();
 #define _setbkcolor /* HIDE */
-#define _setcolor /* HIDE */
+short _setcolor( short pixval );
 #define _setbkcolor /* HIDE */
 #define _moveto /* HIDE */
 #define _lineto /* HIDE */
