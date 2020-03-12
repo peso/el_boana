@@ -17,8 +17,14 @@
 /** Global window used for all output */
 SDL_Window *ui_window;
 SDL_Renderer *ui_renderer;
+
 int ui_font_width;
 int ui_font_height;
+char* font_char;
+int   font_chars;
+SDL_Surface* font_surf;
+SDL_Texture* font_tx;
+
 struct ui_rgb {
     short r, g, b;
 };
@@ -71,12 +77,18 @@ void ui_init()
     SDL_RenderClear(ui_renderer);
     SDL_RenderPresent(ui_renderer);
 
+    font_surf = SDL_LoadBMP("font-Liberation_Mono-8x16.bmp");
+    font_char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789 .,-!?:()[]/#";
+    font_chars = strlen(font_char);
     ui_font_width = 8;
     ui_font_height = 16;
+    font_tx = SDL_CreateTextureFromSurface(ui_renderer, font_surf);
 }
 /** Shut down SDL. You must call this once after all code in main */
 void ui_done()
 {
+    SDL_DestroyTexture(font_tx);
+    SDL_FreeSurface(font_surf);
     SDL_DestroyWindow(ui_window);
     SDL_Quit();
 }
@@ -97,15 +109,36 @@ void ui_printf( const char* format, ...)
     va_end(ap);
 
     ui_set_sdl_color(15);
-    SDL_Rect rect;
-    rect.x = (_WC_text_pos.col - 1) * ui_font_width;
-    rect.y = (_WC_text_pos.row - 1) * ui_font_height;
-    rect.w = ui_font_width - 1;
-    rect.h = ui_font_height - 1;
+    SDL_Rect ui_rect;
+    ui_rect.x = (_WC_text_pos.col - 1) * ui_font_width;
+    ui_rect.y = (_WC_text_pos.row - 1) * ui_font_height;
+    ui_rect.w = ui_font_width;
+    ui_rect.h = ui_font_height;
 
-    for (char* s=str; *s != 0; s++) {
-        SDL_RenderFillRect(ui_renderer, &rect);
-        rect.x += rect.w + 1;
+    SDL_Rect font_rect;
+    font_rect.y = 0;
+    font_rect.w = ui_font_width;
+    font_rect.h = ui_font_height;
+
+    int first_col = _WC_text_pos.col;
+    int first_row = _WC_text_pos.row;
+
+    for( char* s=str; *s != 0; s++ ) {
+        if( *s == '\n' ) {
+            first_row ++;
+            _WC_text_pos.col = first_col;
+            _WC_text_pos.row = first_row;
+            ui_rect.x = (_WC_text_pos.col - 1) * ui_font_width;
+            ui_rect.y = (_WC_text_pos.row - 1) * ui_font_height;
+            continue;
+        }
+        int i;
+        for( i=0; i<font_chars; i++ ) {
+            if( font_char[i] == *s ) break;
+        }
+        font_rect.x = i * ui_font_width;
+        SDL_RenderCopy(ui_renderer, font_tx, &font_rect, &ui_rect);                 
+        ui_rect.x += ui_rect.w;
         _WC_text_pos.col ++;
     }
     SDL_RenderPresent(ui_renderer);
