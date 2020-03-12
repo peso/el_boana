@@ -16,6 +16,9 @@
 /** Index of current foreground colour. For _VRES16COLOR mode, range is 0..15 */
 short _WC_cur_fg_color_inx;
 
+/** Current position used for graphics */
+struct xycoord _WC_cur_pos;
+
 
 
 /* * * * * * * * * * * * * * * * * * * 
@@ -78,3 +81,53 @@ short _setcolor( short pixval ) {
 }
 
 
+/**
+Description:
+    The moveto functions set the current output position for graphics. The
+    moveto function uses the view coordinate system. The moveto w function uses
+    the window coordinate system.
+
+    The current output position is set to be the point at the coordinates
+    (x,y). Nothing is drawn by the function. The lineto function uses the
+    current output position as the starting point when a line is drawn.
+
+    Note that the output position for graphics output differs from that for
+    text output. The output position for text output can be set by use of the
+    settextposition function.
+
+Returns:
+    The moveto functions return the previous value of the output position for
+    graphics.
+*/
+struct xycoord _moveto( short x, short y ) {
+    struct xycoord old_pos;
+    old_pos = _WC_cur_pos;
+    _WC_cur_pos.xcoord = x;
+    _WC_cur_pos.ycoord = y;
+    return old_pos;
+}
+
+/**
+Description:
+    The lineto functions draw straight lines. The lineto function uses the view
+    coordinate system. The lineto w function uses the window coordinate system.
+    The line is drawn from the current position to the point at the coordinates
+    (x,y). The point (x,y) becomes the new current position. The line is drawn
+    with the current plotting action using the current line style and the
+    current color.
+
+Returns:
+    The lineto functions return a non-zero value when the line was successfully
+    drawn; otherwise, zero is returned.
+*/
+short _lineto( short x, short y ) {
+    struct xycoord old_pos;
+    old_pos = _WC_cur_pos;
+    _WC_cur_pos.xcoord = x;
+    _WC_cur_pos.ycoord = y;
+    
+    /* TODO draw line between old_pos and _WC_cur_pos
+       using _WC_cur_fg_color_inx */
+
+    return 1;
+}

@@ -13,6 +13,11 @@
 
 /* ---- Types ---- */
 
+struct xycoord {
+    short xcoord;
+    short ycoord;
+};
+
 
 /* ---- Functions ---- */
 
@@ -24,7 +29,7 @@ short _getcolor();
 #define _setbkcolor /* HIDE */
 short _setcolor( short pixval );
 #define _setbkcolor /* HIDE */
-#define _moveto /* HIDE */
-#define _lineto /* HIDE */
+struct xycoord _moveto( short x, short y );
+short _lineto( short x, short y );
 #define _floodfill /* HIDE */
 #define _ellipse /* HIDE */
