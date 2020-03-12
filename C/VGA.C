@@ -8,6 +8,7 @@
 
 uint_16  old_bk, old_col;	/* remember colours to restore when finished */
 
+#define USE_WATCOM_GRAPH_H
 #ifndef USE_WATCOM_GRAPH_H
 #include <SDL.h>
 /* Resoution as Watcom _VRES16COLOR */
