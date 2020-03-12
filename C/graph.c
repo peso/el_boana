@@ -13,6 +13,10 @@
             Global variables
  * * * * * * * * * * * * * * * * * * */
 
+/** Global window used for all output */
+SDL_Window *ui_window;
+SDL_Renderer *ui_renderer;
+
 /** Index of current foreground colour. For _VRES16COLOR mode, range is 0..15 */
 short _WC_cur_fg_color_inx;
 
@@ -24,6 +28,32 @@ struct xycoord _WC_cur_pos;
 /* * * * * * * * * * * * * * * * * * * 
         Function implementation
  * * * * * * * * * * * * * * * * * * */
+
+/** Sets up SDL. You must call this once before any code in main */
+void ui_init()
+{
+    SDL_Init(SDL_INIT_VIDEO);
+
+    ui_window = SDL_CreateWindow(
+        "ElBoana",
+        SDL_WINDOWPOS_UNDEFINED,
+        SDL_WINDOWPOS_UNDEFINED,
+        640,
+        480,
+        0
+    );
+
+    ui_renderer = SDL_CreateRenderer(ui_window, -1, SDL_RENDERER_SOFTWARE);
+    SDL_SetRenderDrawColor(ui_renderer, 10, 20, 0, SDL_ALPHA_OPAQUE);
+    SDL_RenderClear(ui_renderer);
+    SDL_RenderPresent(ui_renderer);
+}
+/** Shut down SDL. You must call this once after all code in main */
+void ui_done()
+{
+    SDL_DestroyWindow(ui_window);
+    SDL_Quit();
+}
 
 /**
 Description:

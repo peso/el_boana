@@ -21,6 +21,9 @@ struct xycoord {
 
 /* ---- Functions ---- */
 
+void ui_init();
+void ui_done();
+
 #define _settextposition /* HIDE */
 #define _clearscreen /* HIDE */
 #define _setvideomode /* HIDE */

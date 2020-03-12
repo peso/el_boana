@@ -24,6 +24,7 @@ uint_8	c_row=5, c_col=5;
 
 int main(int argc, char* argv[])
 {
+    ui_init();
     bool game_over;
 
     game_over = FALSE;
@@ -58,6 +59,7 @@ int main(int argc, char* argv[])
     _settextposition( 28, 1 );
     getch();
     vga_finish();
+    ui_done();
 }
 
 void computer_move( int_8 side )
