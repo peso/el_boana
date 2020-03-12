@@ -22,6 +22,15 @@ void print_move( uint_8 depth, uint_8 square, uint_8 type, uint_8 length );
 uint_8	c_row=5, c_col=5;
 
 
+void reset_board( int_8 b[16][16] )
+{
+    for( int r=0; r<11; r++ ) {
+        for( int c=0; c<11; c++ ) {
+            board[r][c] = b[r][c];
+        }
+    }    
+}
+
 int main(int argc, char* argv[])
 {
     ui_init();
@@ -32,6 +41,7 @@ int main(int argc, char* argv[])
     black_discs[0] = 14;
     white_discs[0] = 14;
     static_value[0] = 0;
+    reset_board(belgian_daisy);
     initialize ();
 
     while( game_over == FALSE ) {

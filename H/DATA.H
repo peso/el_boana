@@ -56,6 +56,7 @@ extern uint_16 hash_key_1[];
 extern uint_8 hash_key_2[];
 extern struct move_data move_played[MAX_DEPTH][8];
 extern int_8 board[16][16];
+extern int_8 belgian_daisy[16][16];
 extern int_8 last_square[16][16];
 extern int_8 square_id[16][16];
 extern uint_8 row_sq[];
