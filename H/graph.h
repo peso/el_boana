@@ -18,13 +18,19 @@ struct xycoord {
     short ycoord;
 };
 
+struct rccoord {
+    short row;
+    short col;
+};
+
 
 /* ---- Functions ---- */
 
 void ui_init();
 void ui_done();
+void ui_printf( const char* format, ...);
 
-#define _settextposition /* HIDE */
+struct rccoord _settextposition( short row, short col );
 #define _clearscreen /* HIDE */
 #define _setvideomode /* HIDE */
 #define _getbkcolor() 0

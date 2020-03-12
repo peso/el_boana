@@ -16,12 +16,17 @@
 /** Global window used for all output */
 SDL_Window *ui_window;
 SDL_Renderer *ui_renderer;
+int ui_font_width;
+int ui_font_height;
 
 /** Index of current foreground colour. For _VRES16COLOR mode, range is 0..15 */
 short _WC_cur_fg_color_inx;
 
 /** Current position used for graphics */
 struct xycoord _WC_gr_pos;
+
+/** Current position used for text */
+struct rccoord _WC_text_pos;
 
 
 
@@ -47,12 +52,33 @@ void ui_init()
     SDL_SetRenderDrawColor(ui_renderer, 10, 20, 0, SDL_ALPHA_OPAQUE);
     SDL_RenderClear(ui_renderer);
     SDL_RenderPresent(ui_renderer);
+
+    ui_font_width = 8;
+    ui_font_height = 16;
 }
 /** Shut down SDL. You must call this once after all code in main */
 void ui_done()
 {
     SDL_DestroyWindow(ui_window);
     SDL_Quit();
+}
+
+/** Print on graphics window */
+void ui_printf( const char* format, ...)
+{
+    int len;
+    SDL_Rect rect;
+    rect.x = (_WC_text_pos.col - 1) * ui_font_width;
+    rect.y = (_WC_text_pos.row - 1) * ui_font_height;
+    rect.w = ui_font_width - 1;
+    rect.h = ui_font_height - 1;
+    len = 8;
+    while (len-- > 0) {
+        SDL_RenderFillRect(ui_renderer, &rect);
+        rect.x += rect.w + 1;
+        _WC_text_pos.col ++;
+    }
+    SDL_RenderPresent(ui_renderer);
 }
 
 /**
@@ -74,11 +100,12 @@ Returns:
     The _settextposition function returns, as an rccoord structure, the
     previous output position for text.
 */
-#if 0
 struct rccoord _settextposition( short row, short col ) {
-	  return 0;
+    struct rccoord old_pos = _WC_text_pos;
+    _WC_text_pos.row = row;
+    _WC_text_pos.col = col;
+    return old_pos;
 }
-#endif
 
 /**
 Description:
