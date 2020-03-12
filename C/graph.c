@@ -21,7 +21,7 @@ SDL_Renderer *ui_renderer;
 short _WC_cur_fg_color_inx;
 
 /** Current position used for graphics */
-struct xycoord _WC_cur_pos;
+struct xycoord _WC_gr_pos;
 
 
 
@@ -131,9 +131,9 @@ Returns:
 */
 struct xycoord _moveto( short x, short y ) {
     struct xycoord old_pos;
-    old_pos = _WC_cur_pos;
-    _WC_cur_pos.xcoord = x;
-    _WC_cur_pos.ycoord = y;
+    old_pos = _WC_gr_pos;
+    _WC_gr_pos.xcoord = x;
+    _WC_gr_pos.ycoord = y;
     return old_pos;
 }
 
@@ -152,9 +152,9 @@ Returns:
 */
 short _lineto( short x, short y ) {
     struct xycoord old_pos;
-    old_pos = _WC_cur_pos;
-    _WC_cur_pos.xcoord = x;
-    _WC_cur_pos.ycoord = y;
+    old_pos = _WC_gr_pos;
+    _WC_gr_pos.xcoord = x;
+    _WC_gr_pos.ycoord = y;
     
     /* TODO draw line between old_pos and _WC_cur_pos
        using _WC_cur_fg_color_inx */
