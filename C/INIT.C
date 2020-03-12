@@ -58,7 +58,6 @@ void initialize()
         #else
         input = ui_getch();
         ui_printf( "%c", input );
-        input = 'n';
         #endif
     } while( input != 'y' && input != 'n' && input != 'c' );
 

@@ -131,11 +131,13 @@ Returns:
 */
 int ui_getch()
 {
-    /* TODO wait for 1 keypress */
-    SDL_Delay(100);
-    static int k = 54;
-    k = (k-32) % 90 + 33;
-    return k;
+    SDL_Event event;
+    event.type = 0;
+    while (event.type != SDL_KEYDOWN) {
+        SDL_WaitEvent(&event);
+        if (event.type == SDL_QUIT) exit(1);
+    }
+    return event.key.keysym.sym;
 }
 
 void ui_scan_ul( unsigned long *var )
