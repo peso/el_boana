@@ -18,6 +18,10 @@ SDL_Window *ui_window;
 SDL_Renderer *ui_renderer;
 int ui_font_width;
 int ui_font_height;
+struct ui_rgb {
+    short r, g, b;
+};
+struct ui_rgb ui_rgb_inx[16];
 
 /** Index of current foreground colour. For _VRES16COLOR mode, range is 0..15 */
 short _WC_cur_fg_color_inx;
@@ -49,6 +53,14 @@ void ui_init()
     );
 
     ui_renderer = SDL_CreateRenderer(ui_window, -1, SDL_RENDERER_SOFTWARE);
+
+    for (int i=0; i<16; i++) {
+        int v = i&8 ? 255 : 127;
+        ui_rgb_inx[i].r = i&4 ? v : 0;
+        ui_rgb_inx[i].g = i&2 ? v : 0;
+        ui_rgb_inx[i].b = i&1 ? v : 0;
+    }
+    _WC_cur_fg_color_inx = 15;
     SDL_SetRenderDrawColor(ui_renderer, 10, 20, 0, SDL_ALPHA_OPAQUE);
     SDL_RenderClear(ui_renderer);
     SDL_RenderPresent(ui_renderer);
@@ -63,10 +75,17 @@ void ui_done()
     SDL_Quit();
 }
 
+void ui_set_sdl_color(int inx)
+{
+    struct ui_rgb col = ui_rgb_inx[inx & 15];
+    SDL_SetRenderDrawColor(ui_renderer, col.r, col.g, col.b, SDL_ALPHA_OPAQUE);
+}
+
 /** Print on graphics window */
 void ui_printf( const char* format, ...)
 {
     int len;
+    ui_set_sdl_color(15);
     SDL_Rect rect;
     rect.x = (_WC_text_pos.col - 1) * ui_font_width;
     rect.y = (_WC_text_pos.row - 1) * ui_font_height;
@@ -168,6 +187,9 @@ Returns:
 short _setcolor( short pixval ) {
     short old_pixval = _WC_cur_fg_color_inx;
     _WC_cur_fg_color_inx = pixval;
+
+    ui_set_sdl_color(_WC_cur_fg_color_inx);
+
     return old_pixval;
 }
 
