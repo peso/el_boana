@@ -4,6 +4,7 @@
 
 #include "graph.h"
 
+#include <stdarg.h>
 #include <SDL.h>
 
 
@@ -89,15 +90,20 @@ void ui_set_sdl_color(int inx)
 /** Print on graphics window */
 void ui_printf( const char* format, ...)
 {
-    int len;
+    char str[2000];
+    va_list ap;
+    va_start(ap, format);
+    SDL_vsnprintf(str, sizeof(str), format, ap);
+    va_end(ap);
+
     ui_set_sdl_color(15);
     SDL_Rect rect;
     rect.x = (_WC_text_pos.col - 1) * ui_font_width;
     rect.y = (_WC_text_pos.row - 1) * ui_font_height;
     rect.w = ui_font_width - 1;
     rect.h = ui_font_height - 1;
-    len = 8;
-    while (len-- > 0) {
+
+    for (char* s=str; *s != 0; s++) {
         SDL_RenderFillRect(ui_renderer, &rect);
         rect.x += rect.w + 1;
         _WC_text_pos.col ++;
