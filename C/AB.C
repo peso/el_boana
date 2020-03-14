@@ -13,11 +13,27 @@
 #include "intrface.h"
 
 
+/* Keep C99 happy by declaring functions before they are used. */
+void human_move( int_8 );
+void computer_move( int_8 );
+void print_move( uint_8 depth, uint_8 square, uint_8 type, uint_8 length );
+
+
 uint_8	c_row=5, c_col=5;
 
 
-main()
+void reset_board( int_8 b[16][16] )
 {
+    for( int r=0; r<11; r++ ) {
+        for( int c=0; c<11; c++ ) {
+            board[r][c] = b[r][c];
+        }
+    }    
+}
+
+int main(int argc, char* argv[])
+{
+    ui_init();
     bool game_over;
 
     game_over = FALSE;
@@ -25,6 +41,7 @@ main()
     black_discs[0] = 14;
     white_discs[0] = 14;
     static_value[0] = 0;
+    reset_board(belgian_daisy);
     initialize ();
 
     while( game_over == FALSE ) {
@@ -50,8 +67,9 @@ main()
 	}
     }
     _settextposition( 28, 1 );
-    getch();
+    ui_getch();
     vga_finish();
+    ui_done();
 }
 
 void computer_move( int_8 side )
@@ -106,25 +124,25 @@ void computer_move( int_8 side )
         }
 
 	_settextposition( 16, 51 );
-	printf( "    Time : %3.1f [%3.1f]    \n", 
+	ui_printf( "    Time : %3.1f [%3.1f]    \n", 
 	    (float) (get_time_used()-start_time)/100, (float) time_alloc/100 );
 	_settextposition( 17, 51 );
-	printf( "   Depth : %d   \n", search_depth );
+	ui_printf( "   Depth : %d   \n", search_depth );
 	_settextposition( 18, 51 );
-	printf( "Searched : %lu    \n", boards_searched );
+	ui_printf( "Searched : %lu    \n", boards_searched );
 	_settextposition( 19, 51 );
 	if( get_time_used() > start_time ) {
-	    printf( "   Speed : %lu n/s    \n", 
+	    ui_printf( "   Speed : %lu n/s    \n", 
 			boards_searched*100/(get_time_used()-start_time) );
 	} else {
-	    printf( "   Speed : 0 n/s      \n" );
+	    ui_printf( "   Speed : 0 n/s      \n" );
 	}
 	_settextposition( 20, 51 );
-	printf( "   Value : %d   \n", b_val );
+	ui_printf( "   Value : %d   \n", b_val );
 	_settextposition( 21, 51 );
-	printf( "    Best : " );
+	ui_printf( "    Best : " );
 	print_move( 0, move_square[0], move_type[0], move_length[0] );
-	printf( "     \n");
+	ui_printf( "     \n");
 
 	if( move_square[0] == last_move_square &&
 		move_type[0] == last_move_type &&
@@ -147,7 +165,7 @@ void computer_move( int_8 side )
 	white_time += get_time_used() - start_time;
 	_settextposition( 11, 59 );
     }
-    printf( "%3d. ", (move_number+2)/2 );
+    ui_printf( "%3d. ", (move_number+2)/2 );
     print_move( 0, move_square[0], move_type[0], move_length[0] );
       
     i = black_discs[0] + white_discs[0];
@@ -190,7 +208,7 @@ void human_move( int_8 side )
 get_move:
 
     _settextposition( 28, 10 );
-    printf( "Please select tail marble position\n" );
+    ui_printf( "Please select tail marble position\n" );
 
     do {
         tail_sq = get_square( &c_row, &c_col );
@@ -200,7 +218,7 @@ get_move:
     } while( board[row_sq[tail_sq]][col_sq[tail_sq]] != side );
 
     _settextposition( 28, 10 );
-    printf( "Please select head marble position\n" );
+    ui_printf( "Please select head marble position\n" );
 
 get_head_sq:
 
@@ -254,7 +272,7 @@ get_head_sq:
     }
 
     _settextposition( 28, 10 );
-    printf( "Please select new tail marble position\n" );
+    ui_printf( "Please select new tail marble position\n" );
 
 get_new_tail:
 
@@ -347,19 +365,19 @@ move_ok:
     if( side == BLACK ) {
 	black_time += get_time_used() - start_time;
 	_settextposition( 7, 59 );
-	printf( "%3d. ", (move_number+2)/2 );
+	ui_printf( "%3d. ", (move_number+2)/2 );
 	print_move( 0, tail_sq, move_type, move_length );
     } else {
 	white_time += get_time_used() - start_time;
 	_settextposition( 11, 59 );
-	printf( "%3d. ", (move_number+2)/2 );
+	ui_printf( "%3d. ", (move_number+2)/2 );
 	print_move( 0, tail_sq, move_type, move_length );
     }
 
     put_pieces();
 
     _settextposition( 28, 10 );
-    printf( "                                      \n" );
+    ui_printf( "                                      \n" );
 }
 
 void print_square( uint_8 square )
@@ -369,11 +387,11 @@ void print_square( uint_8 square )
     row = row_sq[square];
     col = col_sq[square];
 
-    printf( "%c", 'j'-row );
+    ui_printf( "%c", 'j'-row );
     if( row > 4 ) {
-	printf( "%c", '0'+col );
+	ui_printf( "%c", '0'+col );
     } else {
-	printf( "%c", '0'+row+col-5 );
+	ui_printf( "%c", '0'+row+col-5 );
     }
 }
 
@@ -399,9 +417,9 @@ void print_move( uint_8 depth, uint_8 square, uint_8 type, uint_8 length )
 	if( i > 1 ) {
 	    print_square( square_id[row+(i-1)*dy][col+(i-1)*dx] );
 	}
-	printf( "-" );
+	ui_printf( "-" );
 	print_square( square_id[row+dy][col+dx] );
-	printf( "  " );
+	ui_printf( "  " );
     } else {
 	dy = direction[0][(type-6)/2];
 	dx = direction[1][(type-6)/2];
@@ -413,7 +431,7 @@ void print_move( uint_8 depth, uint_8 square, uint_8 type, uint_8 length )
 	    ox = direction[1][((type-6)/2+1) % 6];
 	}
 	print_square( square_id[row+(length-1)*dy][col+(length-1)*dx] );
-	printf( "-" );
+	ui_printf( "-" );
 	print_square( square_id[row+oy][col+ox] );
     }
 }

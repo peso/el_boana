@@ -8,21 +8,43 @@
 
 uint_16  old_bk, old_col;	/* remember colours to restore when finished */
 
+#define USE_WATCOM_GRAPH_H
+#ifndef USE_WATCOM_GRAPH_H
+#include <SDL.h>
+/* Resoution as Watcom _VRES16COLOR */
+#define SCREEN_WIDTH 640
+#define SCREEN_HEIGHT 480
+SDL_Window* window = 0; /* Window to render to */
+SDL_Surface* surf = 0; /* Surface inside window */
+#endif
+
 
 void vga_init()
 {
+#ifdef USE_WATCOM_GRAPH_H
     _setvideomode( _VRES16COLOR );
     old_bk = _getbkcolor();
     old_col = _getcolor();
     _setbkcolor( 0 );	/* BLACK */
+#else /* USER_SDL */
+    printf( "FANCY WATCOM GRAPHICS SIMULATOR that uses sdl\n" );
+    if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
+    {
+        printf( "SDL could not initialize. SDL_Error: %s\n", SDL_GetError() );
+        exit(1);
+    }
+#endif
 }
 
 
 void vga_finish()
 {
+#ifdef USE_WATCOM_GRAPH_H
     _setcolor( old_col );
     _setbkcolor( old_bk );
     _setvideomode( _DEFAULTMODE );
+#else /* USER_SDL */
+#endif
 }
 
 
@@ -48,6 +70,34 @@ void highlight( uint_8 x, uint_8 y, uint_8 colour )
     _lineto( bx, by );
 }
 
+void fill_hex( uint_8 x, uint_8 y, uint_8 colour )
+{
+    uint_16	bx, by;
+
+    /* calculate coordinates of hexagon's top corner */
+
+    bx = 20*(2*x+y) - 100;
+    by = 35*y + 44;
+
+    _setcolor( colour );
+
+    /* trace hexagon perimeter */
+
+    int xr;
+    for (int dy=0; dy<12; dy++) {
+        xr = 20*dy/12;
+        _moveto(bx-xr, by+dy); _lineto(bx+xr,by+dy);
+    }
+    xr = 20;
+    for (int dy=12; dy<35; dy++) {
+        _moveto(bx-xr, by+dy); _lineto(bx+xr,by+dy);
+    }
+    for (int dy=35; dy<47; dy++) {
+        xr = 20*(47-dy)/12;
+        _moveto(bx-xr, by+dy); _lineto(bx+xr,by+dy);
+    }
+}
+
 
 /* 
  *  The playing board in abalone consists of 61 hexagons, each of which
@@ -64,9 +114,13 @@ void hex( uint_8 x, uint_8 y )
     bx = 20*(2*x+y) - 100;
     by = 35*y + 44;
 
+ #if 0
     highlight( x, y, 3 );		/* draw the hexagon */
  
     _floodfill( bx, by+1, -1 );		/* fill it in */
+#else
+    fill_hex( x, y, 3);
+#endif
 
     highlight( x, y, 0 );		/* redraw the perimeter in black */
 }

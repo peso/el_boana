@@ -6,6 +6,11 @@
 #include "move.h"
 #include "eval.h"
 
+/* Keep C99 happy by declaring functions before they are used. */
+int_16 white_value( uint_8 depth, int_16 alpha, int_16 beta );
+int_16 last_black_value( uint_8 depth, int_16 alpha, int_16 beta );
+int_16 last_white_value( uint_8 depth, int_16 alpha, int_16 beta );
+
 /*
  *  We remember the most recent best moves for black and white.  These
  *  moves are tested after the move suggested by the hash tables.
